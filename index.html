@@ -15,6 +15,29 @@
         <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
         <link rel="manifest" href="./assets/site.webmanifest">
         
+
+        <script>
+            function loadTechImage(img) {
+                const bases = (img.dataset.imgBases || img.dataset.imgBase || '').split(',').map(s => s.trim()).filter(Boolean);
+                const exts = ['.png', '.jpg', '.jpeg', '.webp', ''];
+                let index = parseInt(img.dataset.tryIndex || '0', 10);
+                const candidates = [];
+                bases.forEach(base => exts.forEach(ext => candidates.push(base + ext)));
+
+                while (index < candidates.length && candidates[index] === img.src) {
+                    index++;
+                }
+
+                if (index >= candidates.length) {
+                    img.onerror = null;
+                    img.alt = img.alt + '';
+                    return;
+                }
+
+                img.dataset.tryIndex = String(index + 1);
+                img.src = candidates[index];
+            }
+        </script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
         
@@ -123,6 +146,35 @@
                 margin-bottom: 1.2rem;
                 font-weight: 600;
             }
+
+            /* 中心技術卡片樣式 */
+            .tech-card-img {
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+                object-position: center;
+                background-color: #eef2f7;
+            }
+            .tech-card-body {
+                min-height: 285px;
+            }
+            .tech-tag {
+                display: inline-block;
+                font-size: 0.78rem;
+                font-weight: 700;
+                letter-spacing: 0.04em;
+                color: #0d6efd;
+                background-color: rgba(13, 110, 253, 0.08);
+                border: 1px solid rgba(13, 110, 253, 0.15);
+                border-radius: 999px;
+                padding: 0.3rem 0.75rem;
+                margin-bottom: 0.75rem;
+            }
+            .tech-card-title-icon {
+                color: #0d6efd;
+                margin-right: 0.4rem;
+            }
+
         </style>
     </head>
     <body>
@@ -458,6 +510,84 @@
                         </div>
                     </section>
                     
+
+
+                    <section id="techniques" class="mb-5 bg-white p-4 p-md-5 rounded shadow-sm border-top border-primary border-4">
+                        <div class="mb-4">
+                            <h3 class="section-title mb-3">中心技術 (Core Technologies)</h3>
+                            <p class="text-muted mb-0" style="line-height: 1.8;">
+                                本中心聚焦人工智慧與智慧醫療應用，將中醫診療、醫療影像與臨床照護流程結合資料化、模型分析與系統開發，推動醫療科技的實際落地。
+                            </p>
+                        </div>
+
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white">
+                                    <img src="images/bcq01.webp" data-img-bases="images/bcq01,images/bcn01" data-try-index="1" onerror="loadTechImage(this)" class="card-img-top tech-card-img" alt="中醫體質線上問診系統">
+                                    <div class="card-body tech-card-body p-4">
+                                        <span class="tech-tag">AI 問診系統</span>
+                                        <h5 class="card-title fw-bold text-primary"><i class="bi bi-clipboard2-pulse tech-card-title-icon"></i>中醫體質線上問診系統</h5>
+                                        <p class="card-text text-dark mb-0" style="line-height: 1.8;">
+                                            中醫體質是人體的屬性，不同體質會對於某些疾病有著較高的敏感度。我們利用機器學習中訓練快速且準確度高、分析模式也最接近人類直覺思考的決策樹，搭配中醫體質量表，建造一個能快速且精確分析出病人體質的線上系統。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white">
+                                    <img src="images/bcn02.webp" data-img-bases="images/bcn02,images/bcq02" data-try-index="1" onerror="loadTechImage(this)" class="card-img-top tech-card-img" alt="智慧脈診辨識">
+                                    <div class="card-body tech-card-body p-4">
+                                        <span class="tech-tag">脈診數據化</span>
+                                        <h5 class="card-title fw-bold text-primary"><i class="bi bi-activity tech-card-title-icon"></i>智慧脈診辨識</h5>
+                                        <p class="card-text text-dark mb-0" style="line-height: 1.8;">
+                                            現今醫學以西醫為主流醫學，因為其有大量的科學研究數據來驗證，相對的中醫大多依靠經驗的傳承，其中又以四診中的切診最具抽象化。因此，將脈診科學化與數據化，以產生更多研究數據，是大家共同努力的目標。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white">
+                                    <img src="images/bcn03.webp" data-img-bases="images/bcn03,images/bcq03" data-try-index="1" onerror="loadTechImage(this)" class="card-img-top tech-card-img" alt="舌診儀">
+                                    <div class="card-body tech-card-body p-4">
+                                        <span class="tech-tag">舌象辨識</span>
+                                        <h5 class="card-title fw-bold text-primary"><i class="bi bi-camera tech-card-title-icon"></i>舌診儀</h5>
+                                        <p class="card-text text-dark mb-0" style="line-height: 1.8;">
+                                            舌診屬於四診中「望診」的重要項目，舌頭的狀況與臟腑有密切的聯繫。傳統舌診容易受到醫師主觀意識、經驗與當下環境因素影響，因此需要透過影像紀錄、資料累積與系統化分析，提升判斷的客觀性與一致性。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white">
+                                    <img src="images/bcn04.webp" data-img-bases="images/bcn04,images/bcq04" data-try-index="1" onerror="loadTechImage(this)" class="card-img-top tech-card-img" alt="心電圖 STEMI 分析">
+                                    <div class="card-body tech-card-body p-4">
+                                        <span class="tech-tag">心電圖 AI 分析</span>
+                                        <h5 class="card-title fw-bold text-primary"><i class="bi bi-heart-pulse tech-card-title-icon"></i>心電圖 STEMI 分析</h5>
+                                        <p class="card-text text-dark mb-0" style="line-height: 1.8;">
+                                            心肌梗塞（STEMI）是一種經常急性發生且必須及時正確治療的心血管疾病。本中心開發 AI Model，自動識別心電圖為 STEMI 的機率，並以熱力圖標示模型判斷依據，提供醫師作為臨床參考。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white">
+                                    <img src="images/bcq05.webp" data-img-bases="images/bcn05,images/bcq05" data-try-index="1" onerror="loadTechImage(this)" class="card-img-top tech-card-img" alt="智慧血液透析系統">
+                                    <div class="card-body tech-card-body p-4">
+                                        <span class="tech-tag">智慧照護系統</span>
+                                        <h5 class="card-title fw-bold text-primary"><i class="bi bi-hospital tech-card-title-icon"></i>智慧血液透析系統</h5>
+                                        <p class="card-text text-dark mb-0" style="line-height: 1.8;">
+                                            為協助花蓮在地醫療發展與花蓮慈濟醫院腎臟科數位轉型，本中心開發血液透析作業可使用的電子白板系統，呈現各床病人的生理狀態，減少醫護人員工作負擔，提升作業效率，並將資料電子化以累積醫療大數據。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
                     <section id="contact" class="mb-5">
                         <div class="card shadow-sm border-0 bg-white border-top border-primary border-4">
                             <div class="card-body p-4 p-md-5">
@@ -530,7 +660,7 @@
                         <ul class="list-unstyled mb-0">
                             <li><a href="#news" class="footer-link">最新消息</a></li>
                             <li><a href="#research" class="footer-link">關於我們</a></li>
-                            <li><a href="#techniques" class="footer-link">聯盟技術</a></li>
+                            <li><a href="#techniques" class="footer-link">中心技術</a></li>
                             <li><a href="#" class="footer-link">聯盟活動</a></li>
                             <li><a href="#contact" class="footer-link">聯絡我們</a></li>
                         </ul>

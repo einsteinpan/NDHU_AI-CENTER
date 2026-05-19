@@ -1,560 +1,798 @@
-<!doctype html>
+ChatGPT
+
+
+
+
+
+index.html
+檔案
+
+已貼上文字 (1)(39).txt
+文件
+請先看我的程式碼 接下來我要寫中心技術的內容 以下是我中心技術要放的內容
+
+我先檢查你的 index.html 結構和你貼的「中心技術」內容，重點會看目前是否已有 #techniques 區塊，以及要插入在哪裡最合適。
+
+已思考 1m 54s
+我看完了。你目前的 index.html 已經有導覽列連到 #techniques，頁尾也有「聯盟技術」連到 #techniques，但是原本 HTML 裡沒有真正的 <section id="techniques">，所以點「中心技術」會找不到對應區塊。
+
+
+你貼的中心技術內容共有 5 個項目：中醫體質線上問診系統、智慧脈診辨識、舌診儀、心電圖 STEMI 分析、智慧血液透析系統。
+
+
+我已經幫你整理成適合你目前網站風格的 Bootstrap 卡片版，並插入在「中心團隊」後面、「聯絡我們」前面。
+
+你可以下載修改好的版本：
+
+下載 index_with_techniques.html
+
+我建議你用這個版本，因為我沒有直接貼原本 WordPress 的 Stackable 區塊碼，而是改成你現在網站已經在用的 Bootstrap card 樣式，會比較穩定、版面也比較一致。
+
+<!DOCTYPE html>
 <html lang="zh-TW">
-<head>
-	
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-
-	<title>國立東華大學智慧科技中心 &#8211; N.D.H.U. Smart Technology Center</title>
-<meta name='robots' content='max-image-preview:large' />
-<link rel='dns-prefetch' href='//stats.wp.com' />
-<link rel='dns-prefetch' href='//fonts.googleapis.com' />
-<link rel='preconnect' href='//i0.wp.com' />
-<link rel='preconnect' href='//c0.wp.com' />
-<link rel="alternate" type="application/rss+xml" title="訂閱《國立東華大學智慧科技中心》&raquo; 資訊提供" href="https://aicenter.ndhu.edu.tw/feed/" />
-<link rel="alternate" type="application/rss+xml" title="訂閱《國立東華大學智慧科技中心》&raquo; 留言的資訊提供" href="https://aicenter.ndhu.edu.tw/comments/feed/" />
-<style id='wp-img-auto-sizes-contain-inline-css'>
-img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
-/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
-</style>
-<link rel='stylesheet' id='blocksy-dynamic-global-css' href='https://aicenter.ndhu.edu.tw/wp-content/uploads/blocksy/css/global.css?ver=01453' media='all' />
-<link rel='stylesheet' id='wp-block-library-css' href='https://c0.wp.com/c/6.9.4/wp-includes/css/dist/block-library/style.min.css' media='all' />
-<link rel='stylesheet' id='jetpack-forms-layout-css' href='https://aicenter.ndhu.edu.tw/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-forms/src/../dist/contact-form/css/jetpack-forms-layout.css?ver=15.8' media='all' />
-<link rel='stylesheet' id='mediaelement-css' href='https://c0.wp.com/c/6.9.4/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css' media='all' />
-<link rel='stylesheet' id='wp-mediaelement-css' href='https://c0.wp.com/c/6.9.4/wp-includes/js/mediaelement/wp-mediaelement.min.css' media='all' />
-<style id='jetpack-sharing-buttons-style-inline-css'>
-.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}
-/*# sourceURL=https://aicenter.ndhu.edu.tw/wp-content/plugins/jetpack/_inc/blocks/sharing-buttons/view.css */
-</style>
-<style id='global-styles-inline-css'>
-:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--palette-color-1: var(--theme-palette-color-1, #a8977b);--wp--preset--color--palette-color-2: var(--theme-palette-color-2, #7f715c);--wp--preset--color--palette-color-3: var(--theme-palette-color-3, #3f4245);--wp--preset--color--palette-color-4: var(--theme-palette-color-4, #111518);--wp--preset--color--palette-color-5: var(--theme-palette-color-5, #eaeaec);--wp--preset--color--palette-color-6: var(--theme-palette-color-6, #f4f4f5);--wp--preset--color--palette-color-7: var(--theme-palette-color-7, #ffffff);--wp--preset--color--palette-color-8: var(--theme-palette-color-8, #ffffff);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--juicy-peach: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);--wp--preset--gradient--young-passion: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);--wp--preset--gradient--true-sunset: linear-gradient(to right, #fa709a 0%, #fee140 100%);--wp--preset--gradient--morpheus-den: linear-gradient(to top, #30cfd0 0%, #330867 100%);--wp--preset--gradient--plum-plate: linear-gradient(135deg, #667eea 0%, #764ba2 100%);--wp--preset--gradient--aqua-splash: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);--wp--preset--gradient--love-kiss: linear-gradient(to top, #ff0844 0%, #ffb199 100%);--wp--preset--gradient--new-retrowave: linear-gradient(to top, #3b41c5 0%, #a981bb 49%, #ffc8a9 100%);--wp--preset--gradient--plum-bath: linear-gradient(to top, #cc208e 0%, #6713d2 100%);--wp--preset--gradient--high-flight: linear-gradient(to right, #0acffe 0%, #495aff 100%);--wp--preset--gradient--teen-party: linear-gradient(135deg, #FF057C 0%, #8D0B93 50%, #321575 100%);--wp--preset--gradient--fabled-sunset: linear-gradient(135deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);--wp--preset--gradient--arielle-smile: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);--wp--preset--gradient--itmeo-branding: linear-gradient(180deg, #2af598 0%, #009efd 100%);--wp--preset--gradient--deep-blue: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);--wp--preset--gradient--strong-bliss: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);--wp--preset--gradient--sweet-period: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);--wp--preset--gradient--purple-division: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%);--wp--preset--gradient--cold-evening: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);--wp--preset--gradient--mountain-rock: linear-gradient(to right, #868f96 0%, #596164 100%);--wp--preset--gradient--desert-hump: linear-gradient(to top, #c79081 0%, #dfa579 100%);--wp--preset--gradient--ethernal-constance: linear-gradient(to top, #09203f 0%, #537895 100%);--wp--preset--gradient--happy-memories: linear-gradient(300deg, #ff5858 0%, #f09819 100%);--wp--preset--gradient--grown-early: linear-gradient(to top, #0ba360 0%, #3cba92 100%);--wp--preset--gradient--morning-salad: linear-gradient(135deg, #B7F8DB 0%, #50A7C2 100%);--wp--preset--gradient--night-call: linear-gradient(135deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);--wp--preset--gradient--mind-crawl: linear-gradient(135deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);--wp--preset--gradient--angel-care: linear-gradient(135deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%);--wp--preset--gradient--juicy-cake: linear-gradient(to top, #e14fad 0%, #f9d423 100%);--wp--preset--gradient--rich-metal: linear-gradient(to right, #d7d2cc 0%, #304352 100%);--wp--preset--gradient--mole-hall: linear-gradient(340deg, #616161 0%, #9bc5c3 100%);--wp--preset--gradient--cloudy-knoxville: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);--wp--preset--gradient--soft-grass: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);--wp--preset--gradient--saint-petersburg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);--wp--preset--gradient--everlasting-sky: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);--wp--preset--gradient--kind-steel: linear-gradient(340deg, #e9defa 0%, #fbfcdb 100%);--wp--preset--gradient--over-sun: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);--wp--preset--gradient--premium-white: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);--wp--preset--gradient--clean-mirror: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);--wp--preset--gradient--wild-apple: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);--wp--preset--gradient--snow-again: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);--wp--preset--gradient--confident-cloud: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);--wp--preset--gradient--glass-water: linear-gradient(to top, #dfe9f3 0%, white 100%);--wp--preset--gradient--perfect-white: linear-gradient(135deg, #E3FDF5 0%, #FFE6FA 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: clamp(22px, 1.375rem + ((1vw - 3.2px) * 0.625), 30px);--wp--preset--font-size--x-large: clamp(30px, 1.875rem + ((1vw - 3.2px) * 1.563), 50px);--wp--preset--font-size--xx-large: clamp(45px, 2.813rem + ((1vw - 3.2px) * 2.734), 80px);--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:root { --wp--style--global--content-size: var(--theme-block-max-width);--wp--style--global--wide-size: var(--theme-block-wide-max-width); }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.wp-site-blocks) > * { margin-block-start: var(--theme-content-spacing); margin-block-end: 0; }:where(.wp-site-blocks) > :first-child { margin-block-start: 0; }:where(.wp-site-blocks) > :last-child { margin-block-end: 0; }:root { --wp--style--block-gap: var(--theme-content-spacing); }:root :where(.is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.is-layout-flow) > *{margin-block-start: var(--theme-content-spacing);margin-block-end: 0;}:root :where(.is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.is-layout-constrained) > *{margin-block-start: var(--theme-content-spacing);margin-block-end: 0;}:root :where(.is-layout-flex){gap: var(--theme-content-spacing);}:root :where(.is-layout-grid){gap: var(--theme-content-spacing);}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){font-style: inherit;font-weight: inherit;letter-spacing: inherit;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-palette-color-1-color{color: var(--wp--preset--color--palette-color-1) !important;}.has-palette-color-2-color{color: var(--wp--preset--color--palette-color-2) !important;}.has-palette-color-3-color{color: var(--wp--preset--color--palette-color-3) !important;}.has-palette-color-4-color{color: var(--wp--preset--color--palette-color-4) !important;}.has-palette-color-5-color{color: var(--wp--preset--color--palette-color-5) !important;}.has-palette-color-6-color{color: var(--wp--preset--color--palette-color-6) !important;}.has-palette-color-7-color{color: var(--wp--preset--color--palette-color-7) !important;}.has-palette-color-8-color{color: var(--wp--preset--color--palette-color-8) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-palette-color-1-background-color{background-color: var(--wp--preset--color--palette-color-1) !important;}.has-palette-color-2-background-color{background-color: var(--wp--preset--color--palette-color-2) !important;}.has-palette-color-3-background-color{background-color: var(--wp--preset--color--palette-color-3) !important;}.has-palette-color-4-background-color{background-color: var(--wp--preset--color--palette-color-4) !important;}.has-palette-color-5-background-color{background-color: var(--wp--preset--color--palette-color-5) !important;}.has-palette-color-6-background-color{background-color: var(--wp--preset--color--palette-color-6) !important;}.has-palette-color-7-background-color{background-color: var(--wp--preset--color--palette-color-7) !important;}.has-palette-color-8-background-color{background-color: var(--wp--preset--color--palette-color-8) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-palette-color-1-border-color{border-color: var(--wp--preset--color--palette-color-1) !important;}.has-palette-color-2-border-color{border-color: var(--wp--preset--color--palette-color-2) !important;}.has-palette-color-3-border-color{border-color: var(--wp--preset--color--palette-color-3) !important;}.has-palette-color-4-border-color{border-color: var(--wp--preset--color--palette-color-4) !important;}.has-palette-color-5-border-color{border-color: var(--wp--preset--color--palette-color-5) !important;}.has-palette-color-6-border-color{border-color: var(--wp--preset--color--palette-color-6) !important;}.has-palette-color-7-border-color{border-color: var(--wp--preset--color--palette-color-7) !important;}.has-palette-color-8-border-color{border-color: var(--wp--preset--color--palette-color-8) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-juicy-peach-gradient-background{background: var(--wp--preset--gradient--juicy-peach) !important;}.has-young-passion-gradient-background{background: var(--wp--preset--gradient--young-passion) !important;}.has-true-sunset-gradient-background{background: var(--wp--preset--gradient--true-sunset) !important;}.has-morpheus-den-gradient-background{background: var(--wp--preset--gradient--morpheus-den) !important;}.has-plum-plate-gradient-background{background: var(--wp--preset--gradient--plum-plate) !important;}.has-aqua-splash-gradient-background{background: var(--wp--preset--gradient--aqua-splash) !important;}.has-love-kiss-gradient-background{background: var(--wp--preset--gradient--love-kiss) !important;}.has-new-retrowave-gradient-background{background: var(--wp--preset--gradient--new-retrowave) !important;}.has-plum-bath-gradient-background{background: var(--wp--preset--gradient--plum-bath) !important;}.has-high-flight-gradient-background{background: var(--wp--preset--gradient--high-flight) !important;}.has-teen-party-gradient-background{background: var(--wp--preset--gradient--teen-party) !important;}.has-fabled-sunset-gradient-background{background: var(--wp--preset--gradient--fabled-sunset) !important;}.has-arielle-smile-gradient-background{background: var(--wp--preset--gradient--arielle-smile) !important;}.has-itmeo-branding-gradient-background{background: var(--wp--preset--gradient--itmeo-branding) !important;}.has-deep-blue-gradient-background{background: var(--wp--preset--gradient--deep-blue) !important;}.has-strong-bliss-gradient-background{background: var(--wp--preset--gradient--strong-bliss) !important;}.has-sweet-period-gradient-background{background: var(--wp--preset--gradient--sweet-period) !important;}.has-purple-division-gradient-background{background: var(--wp--preset--gradient--purple-division) !important;}.has-cold-evening-gradient-background{background: var(--wp--preset--gradient--cold-evening) !important;}.has-mountain-rock-gradient-background{background: var(--wp--preset--gradient--mountain-rock) !important;}.has-desert-hump-gradient-background{background: var(--wp--preset--gradient--desert-hump) !important;}.has-ethernal-constance-gradient-background{background: var(--wp--preset--gradient--ethernal-constance) !important;}.has-happy-memories-gradient-background{background: var(--wp--preset--gradient--happy-memories) !important;}.has-grown-early-gradient-background{background: var(--wp--preset--gradient--grown-early) !important;}.has-morning-salad-gradient-background{background: var(--wp--preset--gradient--morning-salad) !important;}.has-night-call-gradient-background{background: var(--wp--preset--gradient--night-call) !important;}.has-mind-crawl-gradient-background{background: var(--wp--preset--gradient--mind-crawl) !important;}.has-angel-care-gradient-background{background: var(--wp--preset--gradient--angel-care) !important;}.has-juicy-cake-gradient-background{background: var(--wp--preset--gradient--juicy-cake) !important;}.has-rich-metal-gradient-background{background: var(--wp--preset--gradient--rich-metal) !important;}.has-mole-hall-gradient-background{background: var(--wp--preset--gradient--mole-hall) !important;}.has-cloudy-knoxville-gradient-background{background: var(--wp--preset--gradient--cloudy-knoxville) !important;}.has-soft-grass-gradient-background{background: var(--wp--preset--gradient--soft-grass) !important;}.has-saint-petersburg-gradient-background{background: var(--wp--preset--gradient--saint-petersburg) !important;}.has-everlasting-sky-gradient-background{background: var(--wp--preset--gradient--everlasting-sky) !important;}.has-kind-steel-gradient-background{background: var(--wp--preset--gradient--kind-steel) !important;}.has-over-sun-gradient-background{background: var(--wp--preset--gradient--over-sun) !important;}.has-premium-white-gradient-background{background: var(--wp--preset--gradient--premium-white) !important;}.has-clean-mirror-gradient-background{background: var(--wp--preset--gradient--clean-mirror) !important;}.has-wild-apple-gradient-background{background: var(--wp--preset--gradient--wild-apple) !important;}.has-snow-again-gradient-background{background: var(--wp--preset--gradient--snow-again) !important;}.has-confident-cloud-gradient-background{background: var(--wp--preset--gradient--confident-cloud) !important;}.has-glass-water-gradient-background{background: var(--wp--preset--gradient--glass-water) !important;}.has-perfect-white-gradient-background{background: var(--wp--preset--gradient--perfect-white) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-xx-large-font-size{font-size: var(--wp--preset--font-size--xx-large) !important;}
-:root :where(.wp-block-pullquote){font-size: clamp(0.984em, 0.984rem + ((1vw - 0.2em) * 0.645), 1.5em);line-height: 1.6;}
-/*# sourceURL=global-styles-inline-css */
-</style>
-<link rel='stylesheet' id='parent-style-css' href='https://aicenter.ndhu.edu.tw/wp-content/themes/blocksy/style.css?ver=6.9.4' media='all' />
-<link rel='stylesheet' id='blocksy-fonts-font-source-google-css' href='https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&#038;display=swap' media='all' />
-<link rel='stylesheet' id='ct-main-styles-css' href='https://aicenter.ndhu.edu.tw/wp-content/themes/blocksy/static/bundle/main.min.css?ver=2.1.42' media='all' />
-<link rel='stylesheet' id='ct-page-title-styles-css' href='https://aicenter.ndhu.edu.tw/wp-content/themes/blocksy/static/bundle/page-title.min.css?ver=2.1.42' media='all' />
-<link rel='stylesheet' id='ct-elementor-styles-css' href='https://aicenter.ndhu.edu.tw/wp-content/themes/blocksy/static/bundle/elementor-frontend.min.css?ver=2.1.42' media='all' />
-<link rel='stylesheet' id='ct-stackable-styles-css' href='https://aicenter.ndhu.edu.tw/wp-content/themes/blocksy/static/bundle/stackable.min.css?ver=2.1.42' media='all' />
-<link rel="https://api.w.org/" href="https://aicenter.ndhu.edu.tw/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://aicenter.ndhu.edu.tw/xmlrpc.php?rsd" />
-<meta name="generator" content="WordPress 6.9.4" />
-	<style>img#wpstats{display:none}</style>
-		<noscript><link rel='stylesheet' href='https://aicenter.ndhu.edu.tw/wp-content/themes/blocksy/static/bundle/no-scripts.min.css' type='text/css'></noscript>
-<meta name="generator" content="Elementor 4.0.8; features: additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
-			<style>
-				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
-				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
-					background-image: none !important;
-				}
-				@media screen and (max-height: 1024px) {
-					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
-					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
-						background-image: none !important;
-					}
-				}
-				@media screen and (max-height: 640px) {
-					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
-					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
-						background-image: none !important;
-					}
-				}
-			</style>
-			
-<!-- Jetpack Open Graph Tags -->
-<meta property="og:type" content="website" />
-<meta property="og:title" content="國立東華大學智慧科技中心" />
-<meta property="og:description" content="N.D.H.U. Smart Technology Center" />
-<meta property="og:url" content="https://aicenter.ndhu.edu.tw/" />
-<meta property="og:site_name" content="國立東華大學智慧科技中心" />
-<meta property="og:image" content="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text.png?fit=1144%2C300&#038;ssl=1" />
-<meta property="og:image:width" content="1144" />
-<meta property="og:image:height" content="300" />
-<meta property="og:image:alt" content="" />
-<meta property="og:locale" content="zh_TW" />
-
-<!-- End Jetpack Open Graph Tags -->
-<link rel="icon" href="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/cropped-logo-e1667501591487.png?fit=32%2C32&#038;ssl=1" sizes="32x32" />
-<link rel="icon" href="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/cropped-logo-e1667501591487.png?fit=192%2C192&#038;ssl=1" sizes="192x192" />
-<link rel="apple-touch-icon" href="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/cropped-logo-e1667501591487.png?fit=180%2C180&#038;ssl=1" />
-<meta name="msapplication-TileImage" content="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/cropped-logo-e1667501591487.png?fit=270%2C270&#038;ssl=1" />
-		<style id="wp-custom-css">
-			.ct-frosted-glass {
-	backdrop-filter: blur(40px) brightness(200%);
-	-webkit-backdrop-filter: blur(40px) brightness(200%);
-}
-
-.ct-subscribe-form {
-	--form-field-height: 60px;
-	--form-field-padding: 0 25px;
-	--form-field-initial-background: #000;
-	--form-field-focus-background: rgba(0, 0, 0, 0.4);
-	--form-field-border-width: 0;
-	--color: #fff;
-	
-	
-	--buttonMinHeight: 60px;
-	--theme-button-background-initial-color: var(--theme-palette-color-1);
-	--buttonTextInitialColor: #fff;
-}
-
-/* main icon boxes */
-.ct-mainbox h5,
-.ct-mainbox h6,
-.ct-mainbox p,
-.ct-mainbox:hover ul>li{
-	transition: all 0.2s ease;
-}
-.ct-mainbox:hover h5,
-.ct-mainbox:hover h6,
-.ct-mainbox:hover p,
-.ct-mainbox:hover ul>li{ 
-	color: var(--theme-palette-color-8) !important;
-}
-/*custom style by nick*/
-.drop-shadow {
-    -webkit-filter: drop-shadow(26px 26px 15px rgba(0, 0, 0, 0.3));
-    filter: drop-shadow(26px 26px 15px rgba(0, 0, 0, 0.3))
-}
-
-.memberRights {
-	padding-left: 20px;
-	min-height: 350px; 
-}
-
-.footerTitle {
-	font-size: 26px;
-	margin-bottom: 15px !important;
-	letter-spacing: 3px;
-}
-.footerImg {
-	max-width: 250px;
-	height: auto;
-}
-.techYT {
-	width: 810px;
-	height: 470px;
-}
-@media screen and (max-width: 820px) {
-	.footerImg {
-		max-width: 100%;
-	}
-	.footerImg img {
-		width: 80% !important;
-	}
-	.techYT {
-		width: 560px;
-		height: 315px;
-	}
-}
-@media screen and (max-width: 565px) {
-	.techYT {
-		width: 320px;
-		height: 235px;
-	}
-}		</style>
-			</head>
-
-
-<body class="home blog wp-custom-logo wp-embed-responsive wp-theme-blocksy wp-child-theme-blocksy-child stk--is-blocksy-theme elementor-default elementor-kit-194 ct-elementor-default-template" data-link="type-2" data-prefix="blog" data-header="type-1:sticky" data-footer="type-1">
-
-<a class="skip-link screen-reader-text" href="#main">跳至主要內容</a><div class="ct-drawer-canvas" data-location="start">
-		<div id="search-modal" class="ct-panel" data-behaviour="modal" role="dialog" aria-label="搜尋對話框" inert>
-			<div class="ct-panel-actions">
-				<button class="ct-toggle-close" data-type="type-1" aria-label="關閉搜尋互動視窗">
-					<svg class="ct-icon" width="12" height="12" viewBox="0 0 15 15"><path d="M1 15a1 1 0 01-.71-.29 1 1 0 010-1.41l5.8-5.8-5.8-5.8A1 1 0 011.7.29l5.8 5.8 5.8-5.8a1 1 0 011.41 1.41l-5.8 5.8 5.8 5.8a1 1 0 01-1.41 1.41l-5.8-5.8-5.8 5.8A1 1 0 011 15z"/></svg>				</button>
-			</div>
-
-			<div class="ct-panel-content">
-				
-
-<form role="search" method="get" class="ct-search-form"  action="https://aicenter.ndhu.edu.tw/" aria-haspopup="listbox" data-live-results="thumbs">
-
-	<input
-		type="search" class="modal-field"		placeholder="Search"
-		value=""
-		name="s"
-		autocomplete="off"
-		title="搜尋..."
-		aria-label="搜尋..."
-			>
-
-	<div class="ct-search-form-controls">
-		
-		<button type="submit" class="wp-element-button" data-button="icon" aria-label="搜尋按鈕">
-			<svg class="ct-icon ct-search-button-content" aria-hidden="true" width="15" height="15" viewBox="0 0 15 15"><path d="M14.8,13.7L12,11c0.9-1.2,1.5-2.6,1.5-4.2c0-3.7-3-6.8-6.8-6.8S0,3,0,6.8s3,6.8,6.8,6.8c1.6,0,3.1-0.6,4.2-1.5l2.8,2.8c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2C15.1,14.5,15.1,14,14.8,13.7z M1.5,6.8c0-2.9,2.4-5.2,5.2-5.2S12,3.9,12,6.8S9.6,12,6.8,12S1.5,9.6,1.5,6.8z"/></svg>
-			<span class="ct-ajax-loader">
-				<svg viewBox="0 0 24 24">
-					<circle cx="12" cy="12" r="10" opacity="0.2" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"/>
-
-					<path d="m12,2c5.52,0,10,4.48,10,10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
-						<animateTransform
-							attributeName="transform"
-							attributeType="XML"
-							type="rotate"
-							dur="0.6s"
-							from="0 12 12"
-							to="360 12 12"
-							repeatCount="indefinite"
-						/>
-					</path>
-				</svg>
-			</span>
-		</button>
-
-		
-					<input type="hidden" name="ct_post_type" value="post:page">
-		
-		
-
-			</div>
-
-			<div class="screen-reader-text" aria-live="polite" role="status">
-			找不到符合條件的結果		</div>
-	
-</form>
-
-
-			</div>
-		</div>
-
-		<div id="offcanvas" class="ct-panel ct-header" data-behaviour="right-side" role="dialog" aria-label="滑入對話框" inert=""><div class="ct-panel-inner">
-				<div class="ct-panel-actions">
-					
-					
-				<button class="ct-toggle-close" data-type="type-1" aria-label="關閉側選單">
-					<svg class="ct-icon" width="12" height="12" viewBox="0 0 15 15"><path d="M1 15a1 1 0 01-.71-.29 1 1 0 010-1.41l5.8-5.8-5.8-5.8A1 1 0 011.7.29l5.8 5.8 5.8-5.8a1 1 0 011.41 1.41l-5.8 5.8 5.8 5.8a1 1 0 01-1.41 1.41l-5.8-5.8-5.8 5.8A1 1 0 011 15z"/></svg>
-				</button>
-			
-				</div>
-			<div class="ct-panel-content" data-device="desktop"><div class="ct-panel-content-inner"></div></div><div class="ct-panel-content" data-device="mobile"><div class="ct-panel-content-inner">
-<a href="https://aicenter.ndhu.edu.tw/" class="site-logo-container" data-id="offcanvas-logo" rel="home" itemprop="url">
-			<img width="1144" height="300" src="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text_w-1.png?fit=1144%2C300&amp;ssl=1" class="default-logo" alt="國立東華大學智慧科技中心" decoding="async" srcset="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text_w-1.png?w=1144&amp;ssl=1 1144w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text_w-1.png?resize=300%2C79&amp;ssl=1 300w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text_w-1.png?resize=1024%2C269&amp;ssl=1 1024w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text_w-1.png?resize=768%2C201&amp;ssl=1 768w" sizes="(max-width: 1144px) 100vw, 1144px" />	</a>
-
-
-<nav
-	class="mobile-menu menu-container has-submenu"
-	data-id="mobile-menu" data-interaction="click" data-toggle-type="type-1" data-submenu-dots="yes"	aria-label="頁首連結">
-
-	<ul id="menu-%e9%a0%81%e9%a6%96%e9%80%a3%e7%b5%90-1" class=""><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-227"><a href="https://aicenter.ndhu.edu.tw/" aria-current="page" class="ct-menu-link">首頁</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1104"><a href="https://aicenter.ndhu.edu.tw/about-us/" class="ct-menu-link">關於我們</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1101"><span class="ct-sub-menu-parent"><a href="https://aicenter.ndhu.edu.tw/news/" class="ct-menu-link">最新消息</a><button class="ct-toggle-dropdown-mobile" aria-label="展開下拉選單" aria-haspopup="true" aria-expanded="false"><svg class="ct-icon toggle-icon-3" width="12" height="12" viewBox="0 0 15 15" aria-hidden="true"><path d="M2.6,5.8L2.6,5.8l4.3,5C7,11,7.3,11.1,7.5,11.1S8,11,8.1,10.8l4.2-4.9l0.1-0.1c0.1-0.1,0.1-0.2,0.1-0.3c0-0.3-0.2-0.5-0.5-0.5l0,0H3l0,0c-0.3,0-0.5,0.2-0.5,0.5C2.5,5.7,2.5,5.8,2.6,5.8z"/></svg></button></span>
-<ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2688"><a href="https://aicenter.ndhu.edu.tw/news/" class="ct-menu-link">中心消息</a></li>
-	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2582"><a href="https://aicenter.ndhu.edu.tw/posts/category/research-result/" class="ct-menu-link">研究成果</a></li>
-	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2581"><a href="https://aicenter.ndhu.edu.tw/posts/category/activities-info/" class="ct-menu-link">活動訊息</a></li>
-	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2580"><a href="https://aicenter.ndhu.edu.tw/posts/category/info-share/" class="ct-menu-link">資訊分享</a></li>
-	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2584"><a href="https://aicenter.ndhu.edu.tw/posts/category/press-interview/" class="ct-menu-link">媒體專訪</a></li>
-</ul>
-</li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2627"><a href="https://aicenter.ndhu.edu.tw/techniques/" class="ct-menu-link">中心技術</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1103"><a href="https://aicenter.ndhu.edu.tw/contact-us/" class="ct-menu-link">聯絡我們</a></li>
-</ul></nav>
-
-
-<div
-	class="ct-header-socials "
-	data-id="socials">
-
-	
-		<div class="ct-social-box" data-color="custom" data-icon-size="custom" data-icons-type="rounded:solid" >
-			
-			
-							
-				<a href="https://www.facebook.com/profile.php?id=100087551023781" data-network="facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-					<span class="ct-icon-container">
-					<svg
-					width="20px"
-					height="20px"
-					viewBox="0 0 20 20"
-					aria-hidden="true">
-						<path d="M20,10.1c0-5.5-4.5-10-10-10S0,4.5,0,10.1c0,5,3.7,9.1,8.4,9.9v-7H5.9v-2.9h2.5V7.9C8.4,5.4,9.9,4,12.2,4c1.1,0,2.2,0.2,2.2,0.2v2.5h-1.3c-1.2,0-1.6,0.8-1.6,1.6v1.9h2.8L13.9,13h-2.3v7C16.3,19.2,20,15.1,20,10.1z"/>
-					</svg>
-				</span>				</a>
-							
-				<a href="https://www.facebook.com/groups/514112400600052/" data-network="facebook_group" aria-label="Facebook 社團" target="_blank" rel="noopener noreferrer">
-					<span class="ct-icon-container">
-					<svg
-					width="20px"
-					height="20px"
-					viewBox="0 0 20 20"
-					aria-hidden="true">
-						<path d="M3.3,18.4c-0.2-0.5,0.3-2.8,0.7-3.7c0.5-1.1,1.6-2,2.5-2.3c0.6-0.2,0.7-0.2,2.1,0.5l1.4,0.7l1.4-0.7c0.8-0.4,1.5-0.7,1.8-0.7c0.5,0,1.8,0.9,2.4,1.6c0.6,0.9,1.1,2.3,1.2,3.7l0,1.1l-6.7,0C4,18.7,3.4,18.6,3.3,18.4z M0.1,12.8c-0.4-0.9,0.6-3.4,1.6-4.1c0.8-0.5,1.5-0.5,2.5,0.1c0.6,0.4,0.9,0.5,1.1,0.3C5.6,9,5.7,9,5.9,9.3c0.2,0.2,0.6,0.6,0.9,1c0.6,0.6,0.6,0.7-0.4,1.1c-0.4,0.1-1.1,0.5-1.6,1l-0.9,0.7H2.1C0.5,13.1,0.2,13,0.1,12.8z M15.3,12.4c-0.4-0.4-1.1-0.8-1.5-1c-1.1-0.4-1.1-0.5-0.5-1.1c0.3-0.3,0.7-0.7,0.9-1C14.4,9,14.5,9,14.8,9.1c0.2,0.1,0.5,0,1.1-0.3c0.5-0.3,1.1-0.5,1.4-0.5c1.3,0,2.6,1.8,2.7,3.7l0,1l-2,0l-2,0L15.3,12.4z M8.4,10.6C7,9.9,6,8.4,6,6.9c0-2.1,2-4.1,4.1-4.1s4.1,2,4.1,4.1S12.1,11,10,11C9.6,11,8.9,10.8,8.4,10.6z M3.5,6.8c-1.7-1-1.9-3.5-0.4-4.7c1.1-0.9,2.5-1,3.6-0.2c1,0.7,1,0.9,0.2,1.6c-0.8,0.7-1.4,1.8-1.5,3C5.2,7.2,5.2,7.3,4.7,7.3C4.4,7.3,3.9,7.1,3.5,6.8z M14.8,6.5c-0.2-1.2-0.7-2.3-1.5-3c-0.8-0.7-0.8-0.9,0.2-1.6C15.4,0.6,18,2,18,4.3c0,1.5-1.4,3-2.7,3C14.9,7.3,14.9,7.2,14.8,6.5z"/>
-					</svg>
-				</span>				</a>
-							
-				<a href="https://m.me/100087551023781" data-network="facebook_messenger" aria-label="Facebook Messenger" target="_blank" rel="noopener noreferrer">
-					<span class="ct-icon-container">
-					<svg
-					width="20px"
-					height="20px"
-					viewBox="0 0 20 20"
-					aria-hidden="true">
-						<path d="M10,0C4.5,0,0.1,4.1,0.1,9.2c0,2.7,1.2,5.2,3.4,7V20l3.7-1.9c0.9,0.3,1.8,0.3,2.7,0.3c5.5,0,9.9-4.1,9.9-9.2C19.9,4.1,15.5,0,10,0z M11,12.3L8.5,9.6l-4.6,2.6L9,6.8l2.5,2.5l4.5-2.5L11,12.3z"/>
-					</svg>
-				</span>				</a>
-							
-				<a href="https://line.me/ti/g2/wjfCNbvSbWnZRMRF7aYIg8et7SeKC2zjMyacXg?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default" data-network="line" aria-label="Line" target="_blank" rel="noopener noreferrer">
-					<span class="ct-icon-container">
-					<svg
-					width="20px"
-					height="20px"
-					viewBox="0 0 20 20"
-					aria-hidden="true">
-						<path d="M16.1 8.2c.3 0 .5.2.5.5s-.2.5-.5.5h-1.5v.9h1.5c.3 0 .5.2.5.5s-.2.5-.5.5h-2c-.3 0-.5-.2-.5-.5v-4c0-.3.2-.5.5-.5h2c.3 0 .5.2.5.5s-.2.5-.5.5h-1.5V8h1.5zm-3.2 2.5c0 .2-.1.4-.4.5h-.2c-.2 0-.3-.1-.4-.2l-2-2.8v2.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-4c0-.2.1-.4.4-.5h.2c.2 0 .3.1.4.2L12 9.2V6.8c0-.3.2-.5.5-.5s.5.2.5.5v3.9zm-4.8 0c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-4c0-.3.2-.5.5-.5s.5.2.5.5v4zm-2 .6h-2c-.3 0-.5-.2-.5-.5v-4c0-.3.2-.5.5-.5s.5.2.5.5v3.5h1.5c.3 0 .5.2.5.5 0 .2-.2.5-.5.5M20 8.6C20 4.1 15.5.5 10 .5S0 4.1 0 8.6c0 4 3.6 7.4 8.4 8 .3.1.8.2.9.5.1.3.1.6 0 .9l-.1.9c0 .3-.2 1 .9.5 1.1-.4 5.8-3.4 7.9-5.8 1.3-1.6 2-3.2 2-5"/>
-					</svg>
-				</span>				</a>
-							
-				<a href="mailto:n&#100;&#104;ut&#099;m&#097;i&#097;&#064;&#103;&#109;ail&#046;&#099;o&#109;" data-network="email" aria-label="電子郵件" target="_blank" rel="noopener noreferrer">
-					<span class="ct-icon-container">
-					<svg
-					width="20"
-					height="20"
-					viewBox="0 0 20 20"
-					aria-hidden="true">
-						<path d="M10,10.1L0,4.7C0.1,3.2,1.4,2,3,2h14c1.6,0,2.9,1.2,3,2.8L10,10.1z M10,11.8c-0.1,0-0.2,0-0.4-0.1L0,6.4V15c0,1.7,1.3,3,3,3h4.9h4.3H17c1.7,0,3-1.3,3-3V6.4l-9.6,5.2C10.2,11.7,10.1,11.7,10,11.8z"/>
-					</svg>
-				</span>				</a>
-							
-				<a href="http://+886-38905051" data-network="phone" aria-label="電話號碼" target="_blank" rel="noopener noreferrer">
-					<span class="ct-icon-container">
-					<svg
-					width="20"
-					height="20"
-					viewBox="0 0 20 20"
-					aria-hidden="true">
-						<path d="M4.8,0C2.1,0,0,2.1,0,4.8v10.5C0,17.9,2.1,20,4.8,20h10.5c2.6,0,4.8-2.1,4.8-4.8V4.8C20,2.1,17.9,0,15.2,0H4.8z M6.7,3.8C7,3.8,7.2,4,7.4,4.3C7.6,4.6,7.9,5,8.3,5.6c0.3,0.5,0.4,1.2,0.1,1.8l-0.7,1C7.4,8.7,7.4,9,7.5,9.3c0.2,0.5,0.6,1.2,1.3,1.9c0.7,0.7,1.4,1.1,1.9,1.3c0.3,0.1,0.6,0.1,0.9-0.1l1-0.7c0.6-0.3,1.3-0.3,1.8,0.1c0.6,0.4,1.1,0.7,1.3,0.9c0.3,0.2,0.4,0.4,0.4,0.7c0.1,1.7-1.2,2.4-1.6,2.4c-0.3,0-3.4,0.4-7-3.2s-3.2-6.8-3.2-7C4.3,5.1,5,3.8,6.7,3.8z"/>
-					</svg>
-				</span>				</a>
-			
-			
-					</div>
-
-	
-</div>
-</div></div></div></div></div>
-<div id="main-container">
-	<header id="header" class="ct-header" data-id="type-1" itemscope="" itemtype="https://schema.org/WPHeader"><div data-device="desktop"><div class="ct-sticky-container"><div data-sticky="shrink"><div data-row="middle" data-column-set="2"><div class="ct-container"><div data-column="start" data-placements="1"><div data-items="primary">
-<div	class="site-branding"
-	data-id="logo"		itemscope="itemscope" itemtype="https://schema.org/Organization">
-
-			<a href="https://aicenter.ndhu.edu.tw/" class="site-logo-container" rel="home" itemprop="url" ><img width="1144" height="300" src="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text.png?fit=1144%2C300&amp;ssl=1" class="sticky-logo" alt="國立東華大學智慧科技中心" decoding="async" srcset="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text.png?w=1144&amp;ssl=1 1144w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text.png?resize=300%2C79&amp;ssl=1 300w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text.png?resize=1024%2C269&amp;ssl=1 1024w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text.png?resize=768%2C201&amp;ssl=1 768w" sizes="(max-width: 1144px) 100vw, 1144px" /><img loading="lazy" width="1144" height="300" src="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text.png?fit=1144%2C300&amp;ssl=1" class="default-logo" alt="國立東華大學智慧科技中心" decoding="async" srcset="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text.png?w=1144&amp;ssl=1 1144w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text.png?resize=300%2C79&amp;ssl=1 300w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text.png?resize=1024%2C269&amp;ssl=1 1024w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text.png?resize=768%2C201&amp;ssl=1 768w" sizes="(max-width: 1144px) 100vw, 1144px" /></a>	
-	</div>
-
-</div></div><div data-column="end" data-placements="1"><div data-items="primary">
-<nav
-	id="header-menu-1"
-	class="header-menu-1 menu-container"
-	data-id="menu" data-interaction="hover"	data-menu="type-1"
-	data-dropdown="type-3:simple"		data-responsive="no"	itemscope="" itemtype="https://schema.org/SiteNavigationElement"	aria-label="頁首連結">
-
-	<ul id="menu-%e9%a0%81%e9%a6%96%e9%80%a3%e7%b5%90" class="menu"><li id="menu-item-227" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-227"><a href="https://aicenter.ndhu.edu.tw/" aria-current="page" class="ct-menu-link">首頁</a></li>
-<li id="menu-item-1104" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1104"><a href="https://aicenter.ndhu.edu.tw/about-us/" class="ct-menu-link">關於我們</a></li>
-<li id="menu-item-1101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1101 animated-submenu-block"><a href="https://aicenter.ndhu.edu.tw/news/" class="ct-menu-link">最新消息<span class="ct-toggle-dropdown-desktop"><svg class="ct-icon" width="8" height="8" viewBox="0 0 15 15" aria-hidden="true"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"/></svg></span></a><button class="ct-toggle-dropdown-desktop-ghost" aria-label="展開下拉選單" aria-haspopup="true" aria-expanded="false"></button>
-<ul class="sub-menu">
-	<li id="menu-item-2688" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2688"><a href="https://aicenter.ndhu.edu.tw/news/" class="ct-menu-link">中心消息</a></li>
-	<li id="menu-item-2582" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2582"><a href="https://aicenter.ndhu.edu.tw/posts/category/research-result/" class="ct-menu-link">研究成果</a></li>
-	<li id="menu-item-2581" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2581"><a href="https://aicenter.ndhu.edu.tw/posts/category/activities-info/" class="ct-menu-link">活動訊息</a></li>
-	<li id="menu-item-2580" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2580"><a href="https://aicenter.ndhu.edu.tw/posts/category/info-share/" class="ct-menu-link">資訊分享</a></li>
-	<li id="menu-item-2584" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2584"><a href="https://aicenter.ndhu.edu.tw/posts/category/press-interview/" class="ct-menu-link">媒體專訪</a></li>
-</ul>
-</li>
-<li id="menu-item-2627" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2627"><a href="https://aicenter.ndhu.edu.tw/techniques/" class="ct-menu-link">中心技術</a></li>
-<li id="menu-item-1103" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1103"><a href="https://aicenter.ndhu.edu.tw/contact-us/" class="ct-menu-link">聯絡我們</a></li>
-</ul></nav>
-
-
-<button
-	class="ct-header-search ct-toggle "
-	data-toggle-panel="#search-modal"
-	aria-controls="search-modal"
-	aria-label="Search"
-	data-label="left"
-	data-id="search">
-
-	<span class="ct-label ct-hidden-sm ct-hidden-md ct-hidden-lg" aria-hidden="true">Search</span>
-
-	<svg class="ct-icon" aria-hidden="true" width="15" height="15" viewBox="0 0 15 15"><path d="M14.8,13.7L12,11c0.9-1.2,1.5-2.6,1.5-4.2c0-3.7-3-6.8-6.8-6.8S0,3,0,6.8s3,6.8,6.8,6.8c1.6,0,3.1-0.6,4.2-1.5l2.8,2.8c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2C15.1,14.5,15.1,14,14.8,13.7z M1.5,6.8c0-2.9,2.4-5.2,5.2-5.2S12,3.9,12,6.8S9.6,12,6.8,12S1.5,9.6,1.5,6.8z"/></svg></button>
-</div></div></div></div></div></div></div><div data-device="mobile"><div class="ct-sticky-container"><div data-sticky="shrink"><div data-row="middle" data-column-set="2"><div class="ct-container"><div data-column="start" data-placements="1"><div data-items="primary">
-<div	class="site-branding"
-	data-id="logo"		>
-
-			<a href="https://aicenter.ndhu.edu.tw/" class="site-logo-container" rel="home" itemprop="url" ><img loading="lazy" width="400" height="105" src="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text-1-e1667505556639.png?fit=400%2C105&amp;ssl=1" class="sticky-logo" alt="國立東華大學智慧科技中心" decoding="async" srcset="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text-1-e1667505556639.png?w=400&amp;ssl=1 400w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text-1-e1667505556639.png?resize=300%2C79&amp;ssl=1 300w" sizes="(max-width: 400px) 100vw, 400px" /><img loading="lazy" width="1144" height="300" src="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text.png?fit=1144%2C300&amp;ssl=1" class="default-logo" alt="國立東華大學智慧科技中心" decoding="async" srcset="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text.png?w=1144&amp;ssl=1 1144w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text.png?resize=300%2C79&amp;ssl=1 300w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text.png?resize=1024%2C269&amp;ssl=1 1024w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text.png?resize=768%2C201&amp;ssl=1 768w" sizes="(max-width: 1144px) 100vw, 1144px" /></a>	
-	</div>
-
-</div></div><div data-column="end" data-placements="1"><div data-items="primary">
-<button
-	class="ct-header-trigger ct-toggle "
-	data-toggle-panel="#offcanvas"
-	aria-controls="offcanvas"
-	data-design="simple"
-	data-label="right"
-	aria-label="Menu"
-	data-id="trigger">
-
-	<span class="ct-label ct-hidden-sm ct-hidden-md ct-hidden-lg" aria-hidden="true">Menu</span>
-
-	<svg class="ct-icon" width="18" height="14" viewBox="0 0 18 14" data-type="type-1" aria-hidden="true">
-		<rect y="0.00" width="18" height="1.7" rx="1"/>
-		<rect y="6.15" width="18" height="1.7" rx="1"/>
-		<rect y="12.3" width="18" height="1.7" rx="1"/>
-	</svg></button>
-</div></div></div></div></div></div></div></header>
-	<main id="main" class="site-main hfeed" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
-
-		
-<div class="hero-section" data-type="type-2">
-	
-			<header class="entry-header ct-container-narrow">
-			<h1 class="page-title" itemprop="headline">Home</h1>
-			<nav class="ct-breadcrumbs" data-source="default"  itemscope="" itemtype="https://schema.org/BreadcrumbList"><span class="last-item" aria-current="page" itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem"><meta itemprop="position" content="1"><span itemprop="name">首頁</span><meta itemprop="url" content="https://aicenter.ndhu.edu.tw/"/></span>			</nav>
-
-				</header>
-	</div>
-
-
-
-<div class="ct-container"  data-vertical-spacing="top:bottom">
-	<section >
-		<div class="entries" data-archive="default" data-layout="grid" data-cards="boxed" data-hover="zoom-in"><article class="entry-card card-content post-2853 post type-post status-publish format-standard has-post-thumbnail sticky hentry category-research-result category-latest-news category-info-share tag-ai tag-app tag-68 tag-90 tag-28 tag-66 tag-33" ><a class="ct-media-container boundless-image has-hover-effect" href="https://aicenter.ndhu.edu.tw/posts/2853/" aria-label="《中醫脈圖紀錄簿》App 開放申請使用"><img loading="lazy" width="768" height="495" src="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/apps.png?fit=768%2C495&amp;ssl=1" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" decoding="async" srcset="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/apps.png?w=804&amp;ssl=1 804w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/apps.png?resize=300%2C193&amp;ssl=1 300w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/apps.png?resize=768%2C495&amp;ssl=1 768w" sizes="auto, (max-width: 768px) 100vw, 768px" itemprop="image" style="aspect-ratio: 4/3;" /></a><ul class="entry-meta" data-type="simple:slash" data-id="mVH7pM" ><li class="meta-date" itemprop="datePublished"><time class="ct-meta-element-date" datetime="2022-11-14T12:30:00+08:00">2022 / 11 / 14</time></li></ul><ul class="entry-meta" data-type="simple:slash" data-id="5fBVmU" ><li class="meta-categories" data-type="simple"><a href="https://aicenter.ndhu.edu.tw/posts/category/research-result/" rel="tag" class="ct-term-53">研究成果</a>, <a href="https://aicenter.ndhu.edu.tw/posts/category/latest-news/" rel="tag" class="ct-term-51">聯盟消息</a>, <a href="https://aicenter.ndhu.edu.tw/posts/category/info-share/" rel="tag" class="ct-term-29">資訊分享</a></li></ul><h2 class="entry-title"><a href="https://aicenter.ndhu.edu.tw/posts/2853/" rel="bookmark">《中醫脈圖紀錄簿》App 開放申請使用</a></h2><div class="entry-excerpt"><p>《中醫脈診紀錄簿》適用於iPadOS及Android雙平台，歡迎各界申請下載試用。</p>
-</div><a class="entry-button wp-element-button ct-button" href="https://aicenter.ndhu.edu.tw/posts/2853/">閱讀全文<span class="screen-reader-text">《中醫脈圖紀錄簿》App 開放申請使用</span></a></article><article class="entry-card card-content post-2911 post type-post status-publish format-standard has-post-thumbnail hentry category-welcome tag-65" ><a class="ct-media-container boundless-image has-hover-effect" href="https://aicenter.ndhu.edu.tw/posts/2911/" aria-label="歡迎 澤康生物科技 加入本聯盟會員"><img loading="lazy" width="525" height="395" src="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?fit=525%2C395&amp;ssl=1" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" decoding="async" srcset="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?w=525&amp;ssl=1 525w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?resize=300%2C226&amp;ssl=1 300w" sizes="auto, (max-width: 525px) 100vw, 525px" itemprop="image" style="aspect-ratio: 4/3;" /></a><ul class="entry-meta" data-type="simple:slash" data-id="mVH7pM" ><li class="meta-date" itemprop="datePublished"><time class="ct-meta-element-date" datetime="2022-12-17T00:09:35+08:00">2022 / 12 / 17</time></li></ul><ul class="entry-meta" data-type="simple:slash" data-id="5fBVmU" ><li class="meta-categories" data-type="simple"><a href="https://aicenter.ndhu.edu.tw/posts/category/welcome/" rel="tag" class="ct-term-64">歡迎會員</a></li></ul><h2 class="entry-title"><a href="https://aicenter.ndhu.edu.tw/posts/2911/" rel="bookmark">歡迎 澤康生物科技 加入本聯盟會員</a></h2><div class="entry-excerpt"><p>歡迎 澤康…</p>
-</div><a class="entry-button wp-element-button ct-button" href="https://aicenter.ndhu.edu.tw/posts/2911/">閱讀全文<span class="screen-reader-text">歡迎 澤康生物科技 加入本聯盟會員</span></a></article><article class="entry-card card-content post-2857 post type-post status-publish format-standard has-post-thumbnail hentry category-latest-news category-info-share tag-ai tag-facebook tag-line tag-68 tag-85 tag-89 tag-88 tag-33" ><a class="ct-media-container boundless-image has-hover-effect" href="https://aicenter.ndhu.edu.tw/posts/2857/" aria-label="智慧中醫科技聯盟Facebook粉絲專頁、社團討論區、LINE社群上線囉！"><img loading="lazy" width="768" height="510" src="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/social.png?fit=768%2C510&amp;ssl=1" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" decoding="async" srcset="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/social.png?w=820&amp;ssl=1 820w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/social.png?resize=300%2C199&amp;ssl=1 300w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/social.png?resize=768%2C510&amp;ssl=1 768w" sizes="auto, (max-width: 768px) 100vw, 768px" itemprop="image" style="aspect-ratio: 4/3;" /></a><ul class="entry-meta" data-type="simple:slash" data-id="mVH7pM" ><li class="meta-date" itemprop="datePublished"><time class="ct-meta-element-date" datetime="2022-11-14T10:30:00+08:00">2022 / 11 / 14</time></li></ul><ul class="entry-meta" data-type="simple:slash" data-id="5fBVmU" ><li class="meta-categories" data-type="simple"><a href="https://aicenter.ndhu.edu.tw/posts/category/latest-news/" rel="tag" class="ct-term-51">聯盟消息</a>, <a href="https://aicenter.ndhu.edu.tw/posts/category/info-share/" rel="tag" class="ct-term-29">資訊分享</a></li></ul><h2 class="entry-title"><a href="https://aicenter.ndhu.edu.tw/posts/2857/" rel="bookmark">智慧中醫科技聯盟Facebook粉絲專頁、社團討論區、LINE社群上線囉！</a></h2><div class="entry-excerpt"><p>號外號外！我們的Facebook粉絲專頁、社團，以及《中醫脈診紀錄簿》App的LINE社群討論區已經成立上線囉，歡迎想要與我們互動、交流的朋友們一起加入我們！</p>
-</div><a class="entry-button wp-element-button ct-button" href="https://aicenter.ndhu.edu.tw/posts/2857/">閱讀全文<span class="screen-reader-text">智慧中醫科技聯盟Facebook粉絲專頁、社團討論區、LINE社群上線囉！</span></a></article><article class="entry-card card-content post-2202 post type-post status-publish format-standard has-post-thumbnail hentry category-welcome tag-65" ><a class="ct-media-container boundless-image has-hover-effect" href="https://aicenter.ndhu.edu.tw/posts/2202/" aria-label="歡迎 慈暉書局 加入本聯盟會員"><img loading="lazy" width="525" height="395" src="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?fit=525%2C395&amp;ssl=1" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" decoding="async" srcset="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?w=525&amp;ssl=1 525w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?resize=300%2C226&amp;ssl=1 300w" sizes="auto, (max-width: 525px) 100vw, 525px" itemprop="image" style="aspect-ratio: 4/3;" /></a><ul class="entry-meta" data-type="simple:slash" data-id="mVH7pM" ><li class="meta-date" itemprop="datePublished"><time class="ct-meta-element-date" datetime="2022-10-19T10:46:00+08:00">2022 / 10 / 19</time></li></ul><ul class="entry-meta" data-type="simple:slash" data-id="5fBVmU" ><li class="meta-categories" data-type="simple"><a href="https://aicenter.ndhu.edu.tw/posts/category/welcome/" rel="tag" class="ct-term-64">歡迎會員</a></li></ul><h2 class="entry-title"><a href="https://aicenter.ndhu.edu.tw/posts/2202/" rel="bookmark">歡迎 慈暉書局 加入本聯盟會員</a></h2><div class="entry-excerpt"><p>歡迎 慈暉…</p>
-</div><a class="entry-button wp-element-button ct-button" href="https://aicenter.ndhu.edu.tw/posts/2202/">閱讀全文<span class="screen-reader-text">歡迎 慈暉書局 加入本聯盟會員</span></a></article><article class="entry-card card-content post-2199 post type-post status-publish format-standard has-post-thumbnail hentry category-welcome tag-65" ><a class="ct-media-container boundless-image has-hover-effect" href="https://aicenter.ndhu.edu.tw/posts/2199/" aria-label="歡迎 瑞太資訊 加入本聯盟會員"><img loading="lazy" width="525" height="395" src="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?fit=525%2C395&amp;ssl=1" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" decoding="async" srcset="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?w=525&amp;ssl=1 525w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?resize=300%2C226&amp;ssl=1 300w" sizes="auto, (max-width: 525px) 100vw, 525px" itemprop="image" style="aspect-ratio: 4/3;" /></a><ul class="entry-meta" data-type="simple:slash" data-id="mVH7pM" ><li class="meta-date" itemprop="datePublished"><time class="ct-meta-element-date" datetime="2022-10-18T12:41:00+08:00">2022 / 10 / 18</time></li></ul><ul class="entry-meta" data-type="simple:slash" data-id="5fBVmU" ><li class="meta-categories" data-type="simple"><a href="https://aicenter.ndhu.edu.tw/posts/category/welcome/" rel="tag" class="ct-term-64">歡迎會員</a></li></ul><h2 class="entry-title"><a href="https://aicenter.ndhu.edu.tw/posts/2199/" rel="bookmark">歡迎 瑞太資訊 加入本聯盟會員</a></h2><div class="entry-excerpt"><p>歡迎 瑞太…</p>
-</div><a class="entry-button wp-element-button ct-button" href="https://aicenter.ndhu.edu.tw/posts/2199/">閱讀全文<span class="screen-reader-text">歡迎 瑞太資訊 加入本聯盟會員</span></a></article><article class="entry-card card-content post-2211 post type-post status-publish format-standard has-post-thumbnail hentry category-press-interview category-activities-info category-info-share tag-2022-kiss-science tag-ai tag-68 tag-70 tag-28 tag-72 tag-34 tag-73 tag-69 tag-33" ><a class="ct-media-container boundless-image has-hover-effect" href="https://aicenter.ndhu.edu.tw/posts/2211/" aria-label="本計畫參與「2022 Kiss Science—科學開門，青春不悶」展覽活動"><img loading="lazy" width="768" height="384" src="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/kiss.jpg?fit=768%2C384&amp;ssl=1" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" decoding="async" srcset="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/kiss.jpg?w=1920&amp;ssl=1 1920w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/kiss.jpg?resize=300%2C150&amp;ssl=1 300w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/kiss.jpg?resize=1024%2C512&amp;ssl=1 1024w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/kiss.jpg?resize=768%2C384&amp;ssl=1 768w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/kiss.jpg?resize=1536%2C768&amp;ssl=1 1536w" sizes="auto, (max-width: 768px) 100vw, 768px" itemprop="image" style="aspect-ratio: 4/3;" /></a><ul class="entry-meta" data-type="simple:slash" data-id="mVH7pM" ><li class="meta-date" itemprop="datePublished"><time class="ct-meta-element-date" datetime="2022-09-07T10:59:00+08:00">2022 / 09 / 07</time></li></ul><ul class="entry-meta" data-type="simple:slash" data-id="5fBVmU" ><li class="meta-categories" data-type="simple"><a href="https://aicenter.ndhu.edu.tw/posts/category/press-interview/" rel="tag" class="ct-term-54">媒體專訪</a>, <a href="https://aicenter.ndhu.edu.tw/posts/category/activities-info/" rel="tag" class="ct-term-52">活動訊息</a>, <a href="https://aicenter.ndhu.edu.tw/posts/category/info-share/" rel="tag" class="ct-term-29">資訊分享</a></li></ul><h2 class="entry-title"><a href="https://aicenter.ndhu.edu.tw/posts/2211/" rel="bookmark">本計畫參與「2022 Kiss Science—科學開門，青春不悶」展覽活動</a></h2><div class="entry-excerpt"><p>國立東華大學資訊工程系人工智慧實驗室在 2017 年與慈濟醫院中醫部合作，針對脈診儀、舌診儀、中醫體質判定做科學化的研究。 2022 年執行國科會 PAIR 計畫與產學計畫，成立智慧中醫科技聯盟，結合 AI 應用，提供中醫的理論基礎支持。......</p>
-</div><a class="entry-button wp-element-button ct-button" href="https://aicenter.ndhu.edu.tw/posts/2211/">閱讀全文<span class="screen-reader-text">本計畫參與「2022 Kiss Science—科學開門，青春不悶」展覽活動</span></a></article><article class="entry-card card-content post-2186 post type-post status-publish format-standard has-post-thumbnail hentry category-welcome tag-65" ><a class="ct-media-container boundless-image has-hover-effect" href="https://aicenter.ndhu.edu.tw/posts/2186/" aria-label="歡迎 第一脈動 加入本聯盟會員"><img loading="lazy" width="525" height="395" src="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?fit=525%2C395&amp;ssl=1" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" decoding="async" srcset="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?w=525&amp;ssl=1 525w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?resize=300%2C226&amp;ssl=1 300w" sizes="auto, (max-width: 525px) 100vw, 525px" itemprop="image" style="aspect-ratio: 4/3;" /></a><ul class="entry-meta" data-type="simple:slash" data-id="mVH7pM" ><li class="meta-date" itemprop="datePublished"><time class="ct-meta-element-date" datetime="2022-06-27T11:32:00+08:00">2022 / 06 / 27</time></li></ul><ul class="entry-meta" data-type="simple:slash" data-id="5fBVmU" ><li class="meta-categories" data-type="simple"><a href="https://aicenter.ndhu.edu.tw/posts/category/welcome/" rel="tag" class="ct-term-64">歡迎會員</a></li></ul><h2 class="entry-title"><a href="https://aicenter.ndhu.edu.tw/posts/2186/" rel="bookmark">歡迎 第一脈動 加入本聯盟會員</a></h2><div class="entry-excerpt"><p>歡迎 第一…</p>
-</div><a class="entry-button wp-element-button ct-button" href="https://aicenter.ndhu.edu.tw/posts/2186/">閱讀全文<span class="screen-reader-text">歡迎 第一脈動 加入本聯盟會員</span></a></article><article class="entry-card card-content post-2147 post type-post status-publish format-standard has-post-thumbnail hentry category-welcome tag-65" ><a class="ct-media-container boundless-image has-hover-effect" href="https://aicenter.ndhu.edu.tw/posts/2147/" aria-label="歡迎 漢廈中醫診所 加入本聯盟會員"><img loading="lazy" width="525" height="395" src="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?fit=525%2C395&amp;ssl=1" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" decoding="async" srcset="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?w=525&amp;ssl=1 525w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?resize=300%2C226&amp;ssl=1 300w" sizes="auto, (max-width: 525px) 100vw, 525px" itemprop="image" style="aspect-ratio: 4/3;" /></a><ul class="entry-meta" data-type="simple:slash" data-id="mVH7pM" ><li class="meta-date" itemprop="datePublished"><time class="ct-meta-element-date" datetime="2022-06-06T09:41:00+08:00">2022 / 06 / 06</time></li></ul><ul class="entry-meta" data-type="simple:slash" data-id="5fBVmU" ><li class="meta-categories" data-type="simple"><a href="https://aicenter.ndhu.edu.tw/posts/category/welcome/" rel="tag" class="ct-term-64">歡迎會員</a></li></ul><h2 class="entry-title"><a href="https://aicenter.ndhu.edu.tw/posts/2147/" rel="bookmark">歡迎 漢廈中醫診所 加入本聯盟會員</a></h2><div class="entry-excerpt"><p>歡迎 漢廈…</p>
-</div><a class="entry-button wp-element-button ct-button" href="https://aicenter.ndhu.edu.tw/posts/2147/">閱讀全文<span class="screen-reader-text">歡迎 漢廈中醫診所 加入本聯盟會員</span></a></article><article class="entry-card card-content post-2139 post type-post status-publish format-standard has-post-thumbnail hentry category-welcome tag-65" ><a class="ct-media-container boundless-image has-hover-effect" href="https://aicenter.ndhu.edu.tw/posts/2139/" aria-label="歡迎 毅誠科技 加入本聯盟會員"><img loading="lazy" width="525" height="395" src="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?fit=525%2C395&amp;ssl=1" class="attachment-medium_large size-medium_large wp-post-image" alt="" loading="lazy" decoding="async" srcset="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?w=525&amp;ssl=1 525w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/05/cover.png?resize=300%2C226&amp;ssl=1 300w" sizes="auto, (max-width: 525px) 100vw, 525px" itemprop="image" style="aspect-ratio: 4/3;" /></a><ul class="entry-meta" data-type="simple:slash" data-id="mVH7pM" ><li class="meta-date" itemprop="datePublished"><time class="ct-meta-element-date" datetime="2022-05-30T09:29:00+08:00">2022 / 05 / 30</time></li></ul><ul class="entry-meta" data-type="simple:slash" data-id="5fBVmU" ><li class="meta-categories" data-type="simple"><a href="https://aicenter.ndhu.edu.tw/posts/category/welcome/" rel="tag" class="ct-term-64">歡迎會員</a></li></ul><h2 class="entry-title"><a href="https://aicenter.ndhu.edu.tw/posts/2139/" rel="bookmark">歡迎 毅誠科技 加入本聯盟會員</a></h2><div class="entry-excerpt"><p>歡迎 毅誠…</p>
-</div><a class="entry-button wp-element-button ct-button" href="https://aicenter.ndhu.edu.tw/posts/2139/">閱讀全文<span class="screen-reader-text">歡迎 毅誠科技 加入本聯盟會員</span></a></article></div>
-		<nav class="ct-pagination" data-pagination="simple"  >
-			<div class="ct-hidden-sm"><span aria-current="page" class="page-numbers current">1</span>
-<a class="page-numbers" href="https://aicenter.ndhu.edu.tw/page/2/">2</a></div><a class="next page-numbers" rel="next" href="https://aicenter.ndhu.edu.tw/page/2/">下一頁 <svg width="9px" height="9px" viewBox="0 0 15 15" fill="currentColor"><path d="M4.1,15c0.2,0,0.4-0.1,0.6-0.2L11.4,8c0.3-0.3,0.3-0.8,0-1.1L4.8,0.2C4.5-0.1,4-0.1,3.7,0.2C3.4,0.5,3.4,1,3.7,1.3l6.1,6.1l-6.2,6.2c-0.3,0.3-0.3,0.8,0,1.1C3.7,14.9,3.9,15,4.1,15z"/></svg></a>
-			
-		</nav>	</section>
-
-	</div>
-	</main>
-
-	<footer id="footer" class="ct-footer" data-id="type-1" itemscope="" itemtype="https://schema.org/WPFooter"><div data-row="middle"><div class="ct-container"><div data-column="widget-area-2"><div class="ct-widget is-layout-flow widget_block" id="block-31">
-<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
-<h6 class="footerTitle has-palette-color-8-color has-text-color wp-block-heading">頁面導覽</h6>
-
-
-
-<ul class="wp-block-list">
-<li><a href="/about-us">關於我們</a></li>
-
-
-
-<li><a href="/news">最新消息</a></li>
-
-
-
-<li><a href="/techniques">聯盟技術</a></li>
-
-
-
-<li><a href="/activities">聯盟活動</a></li>
-
-
-
-<li><a href="/contact-us">聯絡我們</a></li>
-</ul>
-</div>
-</div></div><div data-column="widget-area-3"><div class="ct-widget is-layout-flow widget_block" id="block-32">
-<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
-<h6 class="footerTitle has-palette-color-8-color has-text-color wp-block-heading">友善連結</h6>
-
-
-
-<ul class="wp-block-list">
-<li><a href="https://www.ndhu.edu.tw" target="_blank" rel="noreferrer noopener">國立東華大學</a></li>
-
-
-
-<li><a href="https://www.nstc.gov.tw/" target="_blank" rel="noreferrer noopener">國家科學及技術委員會</a></li>
-
-
-
-<li><a href="https://csie.ndhu.edu.tw" target="_blank" rel="noreferrer noopener">國立東華大學資工系</a></li>
-
-
-
-<li><a href="#" target="_blank" rel="noreferrer noopener">國立東華大學智慧科技中心</a></li>
-
-
-
-<li><a href="#" target="_blank" rel="noreferrer noopener">國立東華大學人工智慧實驗室</a></li>
-</ul>
-</div>
-</div></div><div data-column="widget-area-1"><div class="ct-widget is-layout-flow widget_block" id="block-30">
-<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
-<figure class="wp-block-image alignfull size-full footerImg"><img fetchpriority="high" fetchpriority="high" decoding="async" width="1144" height="300" src="https://tcm.csie.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text_w-1.png" alt="" class="wp-image-751" srcset="https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text_w-1.png?w=1144&amp;ssl=1 1144w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text_w-1.png?resize=300%2C79&amp;ssl=1 300w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text_w-1.png?resize=1024%2C269&amp;ssl=1 1024w, https://i0.wp.com/aicenter.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text_w-1.png?resize=768%2C201&amp;ssl=1 768w" sizes="(max-width: 1144px) 100vw, 1144px" /></figure>
-
-
-
-<p>地址：974003 花蓮縣壽豐鄉志學村大學路二段1號工D303<br>聯絡人：彭小姐<br>聯絡電話：<a href="tel:+886-38905051">(03)8905051</a><br>Email：<a href="mailto:evlyn88420@gms.ndhu.edu.tw">evlyn88420@gms.ndhu.edu.tw</a></p>
-</div>
-</div></div></div></div><div data-row="bottom"><div class="ct-container"><div data-column="copyright">
-<div
-	class="ct-footer-copyright"
-	data-id="copyright">
-
-	<p>Copyright © 2026 國立東華大學<br>國立東華大學智慧科技中心 × 智慧科技中心 × 人工智慧實驗室</p></div>
-</div></div></div></footer></div>
-
-<script type="speculationrules">
-{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/blocksy-child/*","/wp-content/themes/blocksy/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
-</script>
-<div class="ct-drawer-canvas" data-location="end"><div class="ct-drawer-inner">
-	<a href="#main-container" class="ct-back-to-top "
-		data-shape="circle"
-		data-alignment="left"
-		title="到最上面" aria-label="到最上面" hidden>
-
-		<svg class="ct-icon" width="15" height="15" viewBox="0 0 20 20"><path d="M10,0L9.4,0.6L0.8,9.1l1.2,1.2l7.1-7.1V20h1.7V3.3l7.1,7.1l1.2-1.2l-8.5-8.5L10,0z"/></svg>	</a>
-
-	</div></div>			<script>
-				const lazyloadRunObserver = () => {
-					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
-					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
-						entries.forEach( ( entry ) => {
-							if ( entry.isIntersecting ) {
-								let lazyloadBackground = entry.target;
-								if( lazyloadBackground ) {
-									lazyloadBackground.classList.add( 'e-lazyloaded' );
-								}
-								lazyloadBackgroundObserver.unobserve( entry.target );
-							}
-						});
-					}, { rootMargin: '200px 0px 200px 0px' } );
-					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
-						lazyloadBackgroundObserver.observe( lazyloadBackground );
-					} );
-				};
-				const events = [
-					'DOMContentLoaded',
-					'elementor/lazyload/observe',
-				];
-				events.forEach( ( event ) => {
-					document.addEventListener( event, lazyloadRunObserver );
-				} );
-			</script>
-			<link rel='stylesheet' id='ct-entries-styles-css' href='https://aicenter.ndhu.edu.tw/wp-content/themes/blocksy/static/bundle/entries.min.css?ver=2.1.42' media='all' />
-<link rel='stylesheet' id='ct-pagination-styles-css' href='https://aicenter.ndhu.edu.tw/wp-content/themes/blocksy/static/bundle/pagination.min.css?ver=2.1.42' media='all' />
-<script id="ct-scripts-js-extra">
-var ct_localizations = {"ajax_url":"https://aicenter.ndhu.edu.tw/wp-admin/admin-ajax.php","public_url":"https://aicenter.ndhu.edu.tw/wp-content/themes/blocksy/static/bundle/","rest_url":"https://aicenter.ndhu.edu.tw/wp-json/","search_url":"https://aicenter.ndhu.edu.tw/search/QUERY_STRING/","show_more_text":"\u986f\u793a\u66f4\u591a","more_text":"\u66f4\u591a","search_live_results":"\u641c\u5c0b\u7d50\u679c","search_live_no_results":"\u627e\u4e0d\u5230\u7b26\u5408\u689d\u4ef6\u7684\u7d50\u679c","search_live_no_result":"\u627e\u4e0d\u5230\u7b26\u5408\u689d\u4ef6\u7684\u7d50\u679c","search_live_one_result":"\u60a8\u5df1\u627e\u5230 %s \u500b\u7b26\u5408\u7684. \u8acb\u6309 Tab \u9375\u4f86\u9078\u64c7\u5b83.","search_live_many_results":"\u60a8\u5df1\u627e\u5230 %s \u500b\u7b26\u5408\u7684. \u8acb\u6309 Tab \u9375\u4f86\u9078\u64c7\u5b83.","search_live_stock_status_texts":{"instock":"\u5c1a\u6709\u5eab\u5b58","outofstock":"\u6c92\u6709\u5eab\u5b58"},"clipboard_copied":"\u5df2\u5b8c\u6210\u8907\u88fd\uff01","clipboard_failed":"\u8907\u88fd\u5931\u6557","expand_submenu":"\u5c55\u958b\u4e0b\u62c9\u9078\u55ae","collapse_submenu":"\u6536\u5408\u4e0b\u62c9\u9078\u55ae","dynamic_js_chunks":[{"id":"blocksy_sticky_header","selector":"header [data-sticky]","url":"https://aicenter.ndhu.edu.tw/wp-content/plugins/blocksy-companion/static/bundle/sticky.js?ver=2.1.42","version":"2.1.42"}],"dynamic_styles":{"lazy_load":"https://aicenter.ndhu.edu.tw/wp-content/themes/blocksy/static/bundle/non-critical-styles.min.css?ver=2.1.42","search_lazy":"https://aicenter.ndhu.edu.tw/wp-content/themes/blocksy/static/bundle/non-critical-search-styles.min.css?ver=2.1.42","back_to_top":"https://aicenter.ndhu.edu.tw/wp-content/themes/blocksy/static/bundle/back-to-top.min.css?ver=2.1.42"},"dynamic_styles_selectors":[{"selector":".ct-header-cart, #woo-cart-panel","url":"https://aicenter.ndhu.edu.tw/wp-content/themes/blocksy/static/bundle/cart-header-element-lazy.min.css?ver=2.1.42"},{"selector":".flexy","url":"https://aicenter.ndhu.edu.tw/wp-content/themes/blocksy/static/bundle/flexy.min.css?ver=2.1.42"},{"selector":".ct-pagination","url":"https://aicenter.ndhu.edu.tw/wp-content/themes/blocksy/static/bundle/pagination.min.css?ver=2.1.42"},{"selector":"#account-modal","url":"https://aicenter.ndhu.edu.tw/wp-content/plugins/blocksy-companion/static/bundle/header-account-modal-lazy.min.css?ver=2.1.42"},{"selector":".ct-header-account","url":"https://aicenter.ndhu.edu.tw/wp-content/plugins/blocksy-companion/static/bundle/header-account-dropdown-lazy.min.css?ver=2.1.42"}],"login_generic_error_msg":"\u767c\u751f\u610f\u5916\u932f\u8aa4\u3002\u8acb\u7a0d\u5f8c\u518d\u8a66\u4e00\u6b21\u3002"};
-//# sourceURL=ct-scripts-js-extra
-</script>
-<script src="https://aicenter.ndhu.edu.tw/wp-content/themes/blocksy/static/bundle/main.js?ver=2.1.42" id="ct-scripts-js"></script>
-<script id="jetpack-stats-js-before">
-_stq = window._stq || [];
-_stq.push([ "view", {"v":"ext","blog":"212053516","post":"0","tz":"8","srv":"aicenter.ndhu.edu.tw","arch_home":"1","j":"1:15.8"} ]);
-_stq.push([ "clickTrackerInit", "212053516", "0" ]);
-//# sourceURL=jetpack-stats-js-before
-</script>
-<script src="https://stats.wp.com/e-202621.js" id="jetpack-stats-js" defer data-wp-strategy="defer"></script>
-
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="國立東華大學智慧科技中心官方網站" />
+        <meta name="author" content="N.D.H.U. Smart Technology Center" />
+        <title>國立東華大學智慧科技中心 - N.D.H.U. Smart Technology Center</title>
+        
+        <!-- Favicon -->
+        <!-- Favicon -->
+        <link rel="icon" href="./assets/favicon.ico" sizes="any">
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+        <link rel="manifest" href="./assets/site.webmanifest">
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+        
+        <style>
+            /* 自訂樣式 */
+            html { scroll-behavior: smooth; }
+            body { 
+                background-color: #f4f6f9; 
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            .bg-dark { background-color: #1a202c !important; }
+            .pub-year { font-weight: bold; color: #0d6efd; min-width: 60px; }
+            
+            .section-title {
+                position: relative;
+                padding-bottom: 10px;
+                font-weight: 700;
+            }
+            .section-title::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 3px;
+                width: 50px;
+                background-color: #0d6efd;
+            }
+            
+            /* 卡片懸停動畫效果 */
+            .hover-card {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                border-radius: 12px;
+                overflow: hidden;
+            }
+            .hover-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+            }
+            
+            section, article { scroll-margin-top: 80px; }
+            
+            /* 首頁大圖 */
+            .cover-img {
+                width: 100%;
+                height: 350px; 
+                object-fit: cover; 
+                object-position: center; 
+            }
+
+            /* 條列式新聞自訂樣式 */
+            .news-list-item {
+                border-left: 4px solid transparent;
+                transition: all 0.2s ease;
+            }
+            .news-list-item:hover {
+                background-color: #f8f9fa;
+                border-left-color: #0d6efd;
+                padding-left: 1.25rem;
+            }
+            .news-list-date {
+                font-family: monospace;
+                font-size: 0.95rem;
+                min-width: 95px;
+            }
+
+            /* 自訂捲軸樣式 */
+            .pub-scroll {
+                max-height: 500px;
+                overflow-y: auto;
+                padding-right: 10px;
+            }
+            .pub-scroll::-webkit-scrollbar { width: 6px; }
+            .pub-scroll::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+            .pub-scroll::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+            .pub-scroll::-webkit-scrollbar-thumb:hover { background: #0d6efd; }
+            .table-sticky-header th {
+                position: sticky;
+                top: 0;
+                background-color: #f8f9fa;
+                z-index: 1;
+                border-bottom: 2px solid #dee2e6;
+            }
+
+            /* 頁尾樣式 */
+            .footer-title {
+                font-size: 18px;
+                letter-spacing: 3px;
+                margin-bottom: 20px;
+                color: #fff;
+                font-weight: bold;
+            }
+            .footer-link {
+                color: #a9b3c4;
+                text-decoration: none;
+                transition: color 0.3s;
+                line-height: 2;
+            }
+            .footer-link:hover { color: #fff; }
+            .social-icon { font-size: 1.2rem; color: #a9b3c4; transition: color 0.3s; }
+            .social-icon:hover { color: #fff; }
+
+            .sub-title-border {
+                border-left: 4px solid #0d6efd;
+                padding-left: 10px;
+                margin-top: 2rem;
+                margin-bottom: 1.2rem;
+                font-weight: 600;
+            }
+
+            /* 中心技術卡片 */
+            .tech-card-img {
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+                object-position: center;
+                background-color: #f8f9fa;
+            }
+            .tech-card-body {
+                min-height: 230px;
+            }
+            .tech-tag {
+                display: inline-block;
+                font-size: 0.78rem;
+                font-weight: 600;
+                color: #0d6efd;
+                background: rgba(13, 110, 253, 0.08);
+                border: 1px solid rgba(13, 110, 253, 0.15);
+                border-radius: 999px;
+                padding: 0.25rem 0.65rem;
+                margin-bottom: 0.75rem;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#home"><i class="bi bi-cpu me-2"></i>國立東華大學智慧科技中心</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="#home">首頁</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#news">最新消息</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#research">關於我們</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#techniques">中心技術</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">聯絡我們</a></li>
+                        
+                        <li class="nav-item d-none d-lg-block mx-2"><span class="text-secondary">|</span></li>
+                        <li class="nav-item d-flex gap-3 mt-3 mt-lg-0 ms-lg-2">
+                            <a href="https://www.facebook.com/profile.php?id=100087551023781" target="_blank" class="social-icon"><i class="bi bi-facebook"></i></a>
+                            <a href="https://line.me/ti/g2/wjfCNbvSbWnZRMRF7aYIg8et7SeKC2zjMyacXg" target="_blank" class="social-icon"><i class="bi bi-line"></i></a>
+                            <a href="mailto:evlyn88420@gms.ndhu.edu.tw" target="_blank" class="social-icon"><i class="bi bi-envelope"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <article id="home" class="mb-4">
+                        <header class="mb-4 text-center">
+                            <h1 class="fw-bolder mb-2">國立東華大學智慧科技中心</h1>
+                            <div class="text-muted fst-italic mb-3">
+                                N.D.H.U. Smart Technology Center
+                            </div>
+                        </header>
+                        
+                        <figure class="mb-4">
+                            <img class="img-fluid rounded shadow-sm cover-img" src="images/about_us.webp" alt="智慧中心團隊照片" onerror="this.src='https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1200&h=400';" />
+                        </figure>
+                    </article>
+
+                    <section id="news" class="mb-5 bg-white p-4 p-md-5 rounded shadow-sm">
+                        
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+                            <h3 class="section-title mb-3 mb-md-0">最新消息 (Latest News)</h3>
+                            <select id="newsCategoryFilter" class="form-select form-select-sm w-auto shadow-sm cursor-pointer" style="min-width: 150px;">
+                                <option value="all">所有消息</option>
+                                <option value="center">中心/聯盟消息</option>
+                                <option value="research">研究成果</option>
+                                <option value="activity">活動訊息</option>
+                                <option value="info">資訊分享</option>
+                                <option value="media">媒體專訪</option>
+                                <option value="welcome">歡迎會員</option>
+                            </select>
+                        </div>
+                        
+                        <div id="news-container" class="list-group list-group-flush border-top border-bottom">
+                            
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="welcome">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/12/17</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2911/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 澤康生物科技 加入本聯盟會員</a>
+                                    <span class="text-muted small">歡迎 澤康…</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2911/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+                            
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="research center info">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/11/14</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2853/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">《中醫脈圖紀錄簿》App 開放申請使用</a>
+                                    <span class="text-muted small">《中醫脈診紀錄簿》適用於iPadOS及Android雙平台，歡迎各界申請下載試用。</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2853/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="center info">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/11/14</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2857/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">智慧中醫科技聯盟Facebook粉絲專頁、社團討論區、LINE社群上線囉！</a>
+                                    <span class="text-muted small">號外號外！我們的Facebook粉絲專頁、社團，以及《中醫脈診紀錄簿》App的LINE社群討論區已經成立上線囉，歡迎想要與我們互動、交流的朋友們一起加入我們！</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2857/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="welcome">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/10/19</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2202/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 慈暉書局 加入本聯盟會員</a>
+                                    <span class="text-muted small">歡迎 慈暉…</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2202/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="welcome">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/10/18</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2199/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 瑞太資訊 加入本聯盟會員</a>
+                                    <span class="text-muted small">歡迎 瑞太…</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2199/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="media activity info">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/09/07</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2211/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">本計畫參與「2022 Kiss Science—科學開門，青春不悶」展覽活動</a>
+                                    <span class="text-muted small">國立東華大學資訊工程系人工智慧實驗室在 2017 年與慈濟醫院中醫部合作，針對脈診儀、舌診儀做科學化研究。2022 年執行國科會 PAIR 計畫與產學計畫，成立智慧中醫科技聯盟，結合 AI 應用...</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2211/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="welcome">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/06/27</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2186/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 第一脈動 加入本聯盟會員</a>
+                                    <span class="text-muted small">歡迎 第一…</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2186/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="welcome">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/06/06</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2147/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 漢廈中醫診所 加入本聯盟會員</a>
+                                    <span class="text-muted small">歡迎 漢廈…</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2147/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="welcome">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/05/30</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2139/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 毅誠科技 加入本聯盟會員</a>
+                                    <span class="text-muted small">歡迎 毅誠…</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2139/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="media research info">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/05/26</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2128/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">《東華AI通訊報》創刊號-【AI 元宇亮東華】- 亮點研發：人工智慧在智慧醫療的應用</a>
+                                    <span class="text-muted small">自 2016 年 AlphaGo 出現之後，人工智慧(AI)成為世界科技發展的重點項目...本篇文章將介紹東華大學亮點計畫中智慧醫療的成果，包括心電圖辨識、中醫的體質判定與舌診辨識等研究成果。</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2128/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="activity research info">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2021/10/15</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2570/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">本計畫研究成果《居家醫療之線上中醫體質問診系統》於 ISPAC 2021 發表</a>
+                                    <span class="text-muted small">本計畫研究成果《居家醫療之線上中醫體質問診系統》於 33rd International Symposium on Polymer Analysis and Characterization (ISPAC 2021) 發表。</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2570/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="activity research info">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2021/10/01</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2574/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">本計畫研究成果《巡迴看診之可攜式舌診儀》於 ISPAC 2021 發表</a>
+                                    <span class="text-muted small">本計畫研究成果《巡迴看診之可攜式舌診儀》於 33rd International Symposium on Polymer Analysis and Characterization (ISPAC 2021) 發表。</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2574/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                        </div>
+
+                        <div class="mt-4 d-flex justify-content-center">
+                            <nav aria-label="News Pagination">
+                                <ul class="pagination mb-0" id="news-pagination">
+                                    </ul>
+                            </nav>
+                        </div>
+                    </section>
+
+                    <article id="research" class="mb-5 bg-white p-4 p-md-5 rounded shadow-sm border-top border-primary border-4">
+                        <h3 class="section-title mb-4">關於我們 (About Us)</h3>
+                        
+                        <h5 class="fw-bold text-primary mb-3"><i class="bi bi-journal-text me-2"></i>中心簡介</h5>
+                        <p class="fs-6 mb-3 text-dark" style="line-height: 1.8;">
+                            近年來台灣投入大量資源發展 AI ，其中有相當大的一部分都是在發展智慧醫療，廣達創辦人林百里稱智慧醫療產業為台灣的「第二座護國神山」。中醫在台灣發展已久，水準在世界上名列前茅，華人世界看中醫，多數會認同臺灣的中醫醫療品質最為優秀。而全台中醫診所將近四千家，相當普及。但近年來臺灣看中醫的人數持續下降，原因之一是認為中醫診所不科學，步調緩慢。本計畫將嘗試以 AI 來幫助中醫診所的發展，並聯合多家中醫診所，建立智慧中醫科技聯盟，幫助中醫診所進行數位轉型。
+                        </p>
+                        <p class="fs-6 mb-4 text-dark" style="line-height: 1.8;">
+                            智慧中醫科技聯盟成員包括東華教授與慈濟醫師，專任工程師、研究生與專題生，以及來自世界各國的外籍生等。我們團隊投入智慧醫療已經有相當長的一段時間，與慈濟醫院已經進行過三年的中醫計畫，發表多篇中醫論文，並且申請與通過九件中醫科技專利，對中醫產業相當瞭解，將可幫助中醫進行數位轉型。中醫因為不分科，適合偏鄉醫療巡迴看診，本計畫也將有助於東台灣醫療 AI 的發展，與幫助數位區域平衡，造福偏鄉醫療。
+                        </p>
+                        
+                        <h5 class="fw-bold text-primary mb-3 mt-4"><i class="bi bi-eye me-2"></i>發展願景</h5>
+                        <p class="fs-6 mb-4 text-dark" style="line-height: 1.8;">
+                            我們致力於推動產學合作，將人工智慧技術實際落地應用於中醫科技、綠能與智慧農業等領域，並積極招募各界企業夥伴加入聯盟，共同打造智慧科技的創新生態圈。
+                        </p>
+
+                        <h5 class="fw-bold text-primary mb-3 mt-4"><i class="bi bi-card-checklist me-2"></i>中心任務</h5>
+                        <ol class="fs-6 text-dark mb-0 ps-3" style="line-height: 1.8;">
+                            <li class="mb-2">整合本校智慧科技相關領域教師及研究人員，從事智慧科技相關技術研發。</li>
+                            <li class="mb-2">提升本校在智慧科技跨領域研究與教學上的創新，並促進產官學的合作關係。</li>
+                            <li class="mb-2">規劃執行人工智慧相關學分與學程，推廣人工智慧，培養未來世界所需要的人才。</li>
+                            <li class="mb-2">研究東部特有人工智慧跨領域機會，進行台灣特有的農業、觀光、原住民文化的AI研究。</li>
+                            <li>辦理人工智慧相關工作坊、研討會、比賽等，拓展視野與世界接軌。</li>
+                        </ol>
+                    </article>
+                    <section id="professor" class="mb-5">
+                        <h3 class="section-title mb-4">中心團隊 (Center Team)</h3>
+                        
+                        <div class="sub-title-border text-dark fs-5">中心主任</div>
+                        <div class="card mb-4 shadow-sm border-0 hover-card bg-white">
+                            <div class="row g-0">
+                                <div class="col-md-3 d-flex align-items-center justify-content-center p-4 bg-light">
+                                    <img src="images/professor.webp" class="img-fluid rounded-circle shadow-sm" alt="顏士淨教授" onerror="this.src='https://dummyimage.com/200x200/cccccc/ffffff.png&text=Photo';">
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="card-body py-4 px-md-5">
+                                        <h4 class="fw-bold mb-1">顏士淨 (Yen, Shi-Jim)</h4>
+                                        <p class="text-primary fw-semibold mb-3">中心主持人</p>
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="mb-2"><i class="bi bi-building text-primary me-2"></i><strong>服務系所：</strong> 理工學院 資訊工程學系</li>
+                                            <li class="mb-2"><i class="bi bi-mortarboard text-primary me-2"></i><strong>最高學歷：</strong> 國立台灣大學 資訊工程研究所 博士 (1999)</li>
+                                            <li class="mb-2"><i class="bi bi-lightbulb text-primary me-2"></i><strong>研究領域：</strong> 人工智慧、機器學習、醫療 AI、電腦對局</li>
+                                            <li class="mb-2"><i class="bi bi-envelope text-primary me-2"></i><strong>Email：</strong> <a href="mailto:sjyen@gms.ndhu.edu.tw" class="text-decoration-none">sjyen@gms.ndhu.edu.tw</a></li>
+                                            <li><i class="bi bi-telephone text-primary me-2"></i><strong>電話：</strong> +886-3-8905031 / 5051</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sub-title-border text-dark fs-5">共同主持人</div>
+                        <div class="row g-3">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h5 class="fw-bold mb-1">林宜信</h5>
+                                    <p class="text-primary small fw-semibold mb-2">共同主持人</p>
+                                    <p class="text-muted small mb-0"><i class="bi bi-building me-1"></i>佛教慈濟大學 學士後中醫系</p>
+                                    <p class="text-secondary small mb-0">教授兼系主任</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h5 class="fw-bold mb-1">陳震宇</h5>
+                                    <p class="text-primary small fw-semibold mb-2">中心副主任 / 共同主持人</p>
+                                    <p class="text-muted small mb-0"><i class="bi bi-building me-1"></i>國立東華大學 電機工程學系</p>
+                                    <p class="text-secondary small mb-0">教授</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h5 class="fw-bold mb-1">葉國暉</h5>
+                                    <p class="text-primary small fw-semibold mb-2">共同主持人</p>
+                                    <p class="text-muted small mb-0"><i class="bi bi-building me-1"></i>國立東華大學 資訊管理學系</p>
+                                    <p class="text-secondary small mb-0">教授</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h5 class="fw-bold mb-1">楊成湛</h5>
+                                    <p class="text-primary small fw-semibold mb-2">共同主持人</p>
+                                    <p class="text-muted small mb-0"><i class="bi bi-building me-1"></i>花蓮慈濟醫院 中醫部</p>
+                                    <p class="text-secondary small mb-0">主治醫師兼中醫兒科主任</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h5 class="fw-bold mb-1">周信宏</h5>
+                                    <p class="text-primary small fw-semibold mb-2">共同主持人</p>
+                                    <p class="text-muted small mb-0"><i class="bi bi-building me-1"></i>國立暨南國際大學 資訊工程學系</p>
+                                    <p class="text-secondary small mb-0">副教授</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h5 class="fw-bold mb-1">簡暐哲</h5>
+                                    <p class="text-primary small fw-semibold mb-2">中心副主任 / 共同主持人</p>
+                                    <p class="text-muted small mb-0"><i class="bi bi-building me-1"></i>國立東華大學 資訊工程學系</p>
+                                    <p class="text-secondary small mb-0">助理教授</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sub-title-border text-dark fs-5">中醫顧問</div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h5 class="fw-bold mb-1">王建富</h5>
+                                    <p class="text-info small fw-semibold mb-2">中醫顧問</p>
+                                    <p class="text-muted small mb-0"><i class="bi bi-building me-1"></i>漢廈中醫診所</p>
+                                    <p class="text-secondary small mb-0">中醫師兼院長</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h5 class="fw-bold mb-1">吳沛恩</h5>
+                                    <p class="text-info small fw-semibold mb-2">中醫顧問</p>
+                                    <p class="text-muted small mb-0"><i class="bi bi-building me-1"></i>漢華中醫診所</p>
+                                    <p class="text-secondary small mb-0">中醫師</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sub-title-border text-dark fs-5">執行與技術團隊</div>
+                        <div class="row g-3">
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h6 class="fw-bold mb-1">彭英茜</h6>
+                                    <p class="text-success small fw-semibold mb-2">專案經理</p>
+                                    <p class="text-muted small mb-0">國立東華大學 資工系</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h6 class="fw-bold mb-1">林鈺錦</h6>
+                                    <p class="text-success small fw-semibold mb-2">系統工程師</p>
+                                    <p class="text-muted small mb-0">國立東華大學 資工系</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h6 class="fw-bold mb-1">Musa Mukhammed</h6>
+                                    <p class="text-success small fw-semibold mb-2">系統工程師 / 資料科學</p>
+                                    <p class="text-muted small mb-0">國立東華大學 資工系</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h6 class="fw-bold mb-1">Kavak Serkan</h6>
+                                    <p class="text-success small fw-semibold mb-2">系統工程師</p>
+                                    <p class="text-muted small mb-0">國立東華大學 資工系</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+
+                    <section id="techniques" class="mb-5 bg-white p-4 p-md-5 rounded shadow-sm border-top border-primary border-4">
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+                            <div>
+                                <h3 class="section-title mb-3">中心技術 (Core Technologies)</h3>
+                                <p class="text-muted mb-0" style="line-height: 1.8;">
+                                    本中心聚焦人工智慧與智慧醫療應用，將中醫診療、醫療影像與臨床照護流程結合資料化、模型分析與系統開發，推動醫療科技的實際落地。
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card">
+                                    <img src="https://i0.wp.com/tcm.csie.ndhu.edu.tw/wp-content/uploads/2022/11/bcq01.png?resize=1524%2C866&ssl=1" class="card-img-top tech-card-img" alt="中醫體質線上問診系統">
+                                    <div class="card-body tech-card-body p-4">
+                                        <span class="tech-tag">AI 問診系統</span>
+                                        <h5 class="card-title fw-bold text-primary">中醫體質線上問診系統</h5>
+                                        <p class="card-text text-dark mb-0" style="line-height: 1.8;">
+                                            中醫體質是人體的屬性，不同體質會對於某些疾病有著較高的敏感度。我們利用機器學習中，訓練快速且準確度高，分析模式也最接近人類直覺思考的決策樹，搭配中醫體質量表建造一個能快速且精確分析出病人體質的線上系統。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card">
+                                    <img src="https://i0.wp.com/tcm.csie.ndhu.edu.tw/wp-content/uploads/2022/07/%E8%84%88%E8%A8%BA%E7%86%B1%E5%8A%9B.jpg?resize=600%2C962&ssl=1" class="card-img-top tech-card-img" alt="智慧脈診辨識">
+                                    <div class="card-body tech-card-body p-4">
+                                        <span class="tech-tag">脈診數據化</span>
+                                        <h5 class="card-title fw-bold text-primary">智慧脈診辨識</h5>
+                                        <p class="card-text text-dark mb-0" style="line-height: 1.8;">
+                                            現今醫學以西醫為主流醫學，因為其有大量的科學研究數據來驗證，相對的中醫大多依靠經驗的傳承，其中又以四診（望、聞、問、切）中切診最具抽象化。因此將脈診其科學化數據化以產生更多研究數據是大家共同努力的目標。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card">
+                                    <img src="https://i0.wp.com/tcm.csie.ndhu.edu.tw/wp-content/uploads/2022/07/-e1667912992218.jpg?resize=524%2C420&ssl=1" class="card-img-top tech-card-img" alt="舌診儀">
+                                    <div class="card-body tech-card-body p-4">
+                                        <span class="tech-tag">舌象辨識</span>
+                                        <h5 class="card-title fw-bold text-primary">舌診儀</h5>
+                                        <p class="card-text text-dark mb-0" style="line-height: 1.8;">
+                                            舌診屬於四診中「望診」之重要項目，舌頭的狀況與臟腑有密切的聯繫，因此藉著觀察舌頭，即可知曉體內之狀態。對於現代中醫師而言，傳統醫師的判斷受當時醫師主觀意識、經驗以及當下環境因素影響缺乏客觀性，常有紀錄不實或紀錄不全之窘境，需要透過臨床經驗的長久累積與驗證，才能對病症做出精確的辨症。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card">
+                                    <img src="https://i0.wp.com/tcm.csie.ndhu.edu.tw/wp-content/uploads/2022/07/ECG.jpg?resize=797%2C399&ssl=1" class="card-img-top tech-card-img" alt="心電圖 STEMI 分析">
+                                    <div class="card-body tech-card-body p-4">
+                                        <span class="tech-tag">心電圖 AI 分析</span>
+                                        <h5 class="card-title fw-bold text-primary">心電圖 STEMI 分析</h5>
+                                        <p class="card-text text-dark mb-0" style="line-height: 1.8;">
+                                            心肌梗塞（STEMI）是一種經常急性發生，且必須及時正確治療的心血管疾病。過去 STEMI 的確診都需要由醫生判斷心電圖紀錄後方能確定，但過去研究指出，醫生經由心電圖發現 STEMI 的敏感度不及八成，因此我們開發了 AI Model 可以自動識別心電圖為 STEMI 的機率，並以熱力圖標示出判斷依據供醫生參考。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card">
+                                    <img src="https://i0.wp.com/tcm.csie.ndhu.edu.tw/wp-content/uploads/2022/07/%E9%80%8F%E6%9E%90.jpg?resize=1339%2C690&ssl=1" class="card-img-top tech-card-img" alt="智慧血液透析系統">
+                                    <div class="card-body tech-card-body p-4">
+                                        <span class="tech-tag">智慧照護系統</span>
+                                        <h5 class="card-title fw-bold text-primary">智慧血液透析系統</h5>
+                                        <p class="card-text text-dark mb-0" style="line-height: 1.8;">
+                                            為幫助花蓮在地醫療發展，並協助花蓮慈濟醫院腎臟科數位轉型，我們開發血液透析作業時可用的電子白板系統，列出各床病人的生理狀態。減少醫護人員工作負擔，增加效率。並且將資料電子化後，可收集醫療大數據，進行精準醫療。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="contact" class="mb-5">
+                        <div class="card shadow-sm border-0 bg-white border-top border-primary border-4">
+                            <div class="card-body p-4 p-md-5">
+                                <h3 class="section-title mb-4">聯絡我們 (Contact Us)</h3>
+                                <div class="row">
+                                    <div class="col-md-7 mb-4 mb-md-0">
+                                        <div class="d-flex mb-3">
+                                            <i class="bi bi-person-badge fs-3 text-primary me-3 mt-1"></i>
+                                            <div>
+                                                <strong class="d-block text-dark fs-5">聯絡人</strong>
+                                                <span class="text-muted">彭小姐</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mb-3">
+                                            <i class="bi bi-geo-alt fs-3 text-primary me-3 mt-1"></i>
+                                            <div>
+                                                <strong class="d-block text-dark fs-5">地址</strong>
+                                                <span class="text-muted">974003 花蓮縣壽豐鄉志學村大學路二段1號工D303</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mb-3">
+                                            <i class="bi bi-envelope fs-3 text-primary me-3 mt-1"></i>
+                                            <div>
+                                                <strong class="d-block text-dark fs-5">Email</strong>
+                                                <a href="mailto:evlyn88420@gms.ndhu.edu.tw" class="text-decoration-none fs-6">evlyn88420@gms.ndhu.edu.tw</a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mb-4">
+                                            <i class="bi bi-telephone fs-3 text-primary me-3 mt-1"></i>
+                                            <div>
+                                                <strong class="d-block text-dark fs-5">聯絡電話</strong>
+                                                <a href="tel:+886-38905051" class="text-decoration-none fs-6 text-muted">(03) 8905051</a>
+                                            </div>
+                                        </div>
+                                        
+                                        <hr class="my-4 border-light">
+                                        <h5 class="fw-bold text-primary mb-3"><i class="bi bi-share-fill me-2"></i>社群資訊 (Social Media)</h5>
+                                        <div class="d-flex flex-wrap gap-3">
+                                            <a href="https://www.facebook.com/profile.php?id=100087551023781" target="_blank" class="btn btn-outline-primary shadow-sm rounded-pill px-4">
+                                                <i class="bi bi-facebook me-2"></i>Facebook 粉絲專頁
+                                            </a>
+                                            <a href="https://www.facebook.com/groups/514112400600052/" target="_blank" class="btn btn-outline-primary shadow-sm rounded-pill px-4">
+                                                <i class="bi bi-people-fill me-2"></i>Facebook 社團
+                                            </a>
+                                            <a href="https://line.me/ti/g2/wjfCNbvSbWnZRMRF7aYIg8et7SeKC2zjMyacXg" target="_blank" class="btn btn-outline-success shadow-sm rounded-pill px-4">
+                                                <i class="bi bi-line me-2"></i>中醫脈診紀錄簿- LINE 社群討論區
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-5 d-flex align-items-center justify-content-center justify-content-md-end">
+                                        <a href="https://maps.google.com/?q=國立東華大學理工二館" target="_blank" class="btn btn-outline-primary btn-lg w-100 py-3 shadow-sm">
+                                            <i class="bi bi-map me-2"></i> 開啟 Google 地圖
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+        
+        <footer class="py-5 bg-dark mt-auto text-white-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                        <h6 class="footer-title">頁面導覽</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="#news" class="footer-link">最新消息</a></li>
+                            <li><a href="#research" class="footer-link">關於我們</a></li>
+                            <li><a href="#techniques" class="footer-link">聯盟技術</a></li>
+                            <li><a href="#" class="footer-link">聯盟活動</a></li>
+                            <li><a href="#contact" class="footer-link">聯絡我們</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                        <h6 class="footer-title">友善連結</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="https://www.ndhu.edu.tw" target="_blank" class="footer-link">國立東華大學</a></li>
+                            <li><a href="https://www.nstc.gov.tw/" target="_blank" class="footer-link">國家科學及技術委員會</a></li>
+                            <li><a href="https://csie.ndhu.edu.tw" target="_blank" class="footer-link">國立東華大學資工系</a></li>
+                            <li><a href="#" class="footer-link">國立東華大學智慧科技中心</a></li>
+                            <li><a href="#" class="footer-link">國立東華大學人工智慧實驗室</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5 col-md-12">
+                        <img src="https://tcm.csie.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text_w-1.png" alt="國立東華大學智慧科技中心" class="img-fluid mb-4" style="max-width: 280px; opacity: 0.9;" />
+                        <p class="mb-1"><strong>地址：</strong>974003 花蓮縣壽豐鄉志學村大學路二段1號工D303</p>
+                        <p class="mb-1"><strong>聯絡人：</strong>彭英茜 經理</p>
+                        <p class="mb-1"><strong>聯絡電話：</strong><a href="tel:+886-38905051" class="footer-link">(03) 8905051</a></p>
+                        <p class="mb-0"><strong>Email：</strong><a href="mailto:evlyn88420@gms.ndhu.edu.tw" class="footer-link">evlyn88420@gms.ndhu.edu.tw</a></p>
+                    </div>
+                </div>
+                
+                <hr class="mt-5 mb-4 border-secondary" />
+                
+                <div class="text-center text-sm">
+                    <p class="m-0 mb-2">Copyright © 2026 國立東華大學</p>
+                    <small>國立東華大學智慧科技中心 × 智慧科技中心 × 人工智慧實驗室</small>
+                </div>
+            </div>
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <script>
+            // 1. 行動裝置點擊導覽列後自動收合
+            const navLinks = document.querySelectorAll('.nav-item .nav-link:not(.dropdown-toggle)');
+            const menuToggle = document.getElementById('navbarSupportedContent');
+            const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
+            navLinks.forEach((l) => {
+                l.addEventListener('click', () => { if(menuToggle.classList.contains('show')){ bsCollapse.toggle() } })
+            });
+
+            // 2. 動態新聞篩選與分頁功能
+            const newsFilter = document.getElementById('newsCategoryFilter');
+            const allNewsItems = Array.from(document.querySelectorAll('.news-list-item'));
+            const paginationContainer = document.getElementById('news-pagination');
+            const itemsPerPage = 6;
+            
+            let currentFilteredItems = [...allNewsItems];
+            let currentPage = 1;
+
+            function renderNews() {
+                // 先隱藏所有項目
+                allNewsItems.forEach(item => {
+                    item.classList.remove('d-flex');
+                    item.classList.add('d-none');
+                });
+
+                // 計算總頁數
+                const totalPages = Math.ceil(currentFilteredItems.length / itemsPerPage) || 1;
+                if (currentPage > totalPages) currentPage = totalPages;
+
+                // 顯示當前頁面的項目
+                const start = (currentPage - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+                
+                for (let i = start; i < end && i < currentFilteredItems.length; i++) {
+                    currentFilteredItems[i].classList.remove('d-none');
+                    currentFilteredItems[i].classList.add('d-flex');
+                }
+
+                // 產生分頁導覽按鈕 HTML
+                let paginationHTML = '';
+                
+                // 上一頁
+                paginationHTML += `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                    <a class="page-link" href="#news" data-page="${currentPage - 1}"><i class="bi bi-chevron-left me-1"></i>上一頁</a>
+                </li>`;
+                
+                // 數字頁碼
+                for (let i = 1; i <= totalPages; i++) {
+                    paginationHTML += `<li class="page-item ${currentPage === i ? 'active' : ''}">
+                        <a class="page-link" href="#news" data-page="${i}">${i}</a>
+                    </li>`;
+                }
+
+                // 下一頁
+                paginationHTML += `<li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+                    <a class="page-link" href="#news" data-page="${currentPage + 1}">下一頁 <i class="bi bi-chevron-right ms-1"></i></a>
+                </li>`;
+
+                paginationContainer.innerHTML = paginationHTML;
+
+                // 綁定分頁按鈕點擊事件
+                paginationContainer.querySelectorAll('.page-link').forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault(); // 防止網頁跳動
+                        const parent = this.parentElement;
+                        if(parent.classList.contains('disabled')) return;
+                        
+                        const newPage = parseInt(this.getAttribute('data-page'));
+                        if(newPage) {
+                            currentPage = newPage;
+                            renderNews();
+                        }
+                    });
+                });
+            }
+
+            // 綁定下拉選單改變事件
+            newsFilter.addEventListener('change', function() {
+                const filterValue = this.value;
+                if (filterValue === 'all') {
+                    currentFilteredItems = [...allNewsItems];
+                } else {
+                    currentFilteredItems = allNewsItems.filter(item => {
+                        const categories = item.getAttribute('data-category');
+                        return categories && categories.includes(filterValue);
+                    });
+                }
+                currentPage = 1; // 篩選後重置為第一頁
+                renderNews();
+            });
+
+            // 網頁載入時初始化
+            document.addEventListener("DOMContentLoaded", function() {
+                renderNews();
+            });
+        </script>
+    </body>
 </html>
+
