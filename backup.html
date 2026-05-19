@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="國立東華大學智慧科技中心官方網站" />
+        <meta name="author" content="N.D.H.U. Smart Technology Center" />
+        <title>國立東華大學智慧科技中心 - N.D.H.U. Smart Technology Center</title>
+        
+        <link rel="icon" type="image/x-icon" href="https://dummyimage.com/32x32/0d6efd/fff.png&text=AI" />
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+        
+        <style>
+            /* 自訂樣式 */
+            html { scroll-behavior: smooth; }
+            body { 
+                background-color: #f4f6f9; 
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            .bg-dark { background-color: #1a202c !important; }
+            .pub-year { font-weight: bold; color: #0d6efd; min-width: 60px; }
+            
+            .section-title {
+                position: relative;
+                padding-bottom: 10px;
+                font-weight: 700;
+            }
+            .section-title::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 3px;
+                width: 50px;
+                background-color: #0d6efd;
+            }
+            
+            /* 卡片懸停動畫效果 */
+            .hover-card {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                border-radius: 12px;
+                overflow: hidden;
+            }
+            .hover-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+            }
+            
+            section, article { scroll-margin-top: 80px; }
+            
+            /* 首頁大圖 */
+            .cover-img {
+                width: 100%;
+                height: 350px; 
+                object-fit: cover; 
+                object-position: center; 
+            }
+
+            /* 條列式新聞自訂樣式 */
+            .news-list-item {
+                border-left: 4px solid transparent;
+                transition: all 0.2s ease;
+            }
+            .news-list-item:hover {
+                background-color: #f8f9fa;
+                border-left-color: #0d6efd;
+                padding-left: 1.25rem;
+            }
+            .news-list-date {
+                font-family: monospace;
+                font-size: 0.95rem;
+                min-width: 95px;
+            }
+
+            /* 自訂捲軸樣式 */
+            .pub-scroll {
+                max-height: 500px;
+                overflow-y: auto;
+                padding-right: 10px;
+            }
+            .pub-scroll::-webkit-scrollbar { width: 6px; }
+            .pub-scroll::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+            .pub-scroll::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+            .pub-scroll::-webkit-scrollbar-thumb:hover { background: #0d6efd; }
+            .table-sticky-header th {
+                position: sticky;
+                top: 0;
+                background-color: #f8f9fa;
+                z-index: 1;
+                border-bottom: 2px solid #dee2e6;
+            }
+
+            /* 頁尾樣式 */
+            .footer-title {
+                font-size: 18px;
+                letter-spacing: 3px;
+                margin-bottom: 20px;
+                color: #fff;
+                font-weight: bold;
+            }
+            .footer-link {
+                color: #a9b3c4;
+                text-decoration: none;
+                transition: color 0.3s;
+                line-height: 2;
+            }
+            .footer-link:hover { color: #fff; }
+            .social-icon { font-size: 1.2rem; color: #a9b3c4; transition: color 0.3s; }
+            .social-icon:hover { color: #fff; }
+
+            .sub-title-border {
+                border-left: 4px solid #0d6efd;
+                padding-left: 10px;
+                margin-top: 2rem;
+                margin-bottom: 1.2rem;
+                font-weight: 600;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#home"><i class="bi bi-cpu me-2"></i>智慧科技中心</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="#home">首頁</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#news">最新消息</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#research">關於我們</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#techniques">中心技術</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">聯絡我們</a></li>
+                        
+                        <li class="nav-item d-none d-lg-block mx-2"><span class="text-secondary">|</span></li>
+                        <li class="nav-item d-flex gap-3 mt-3 mt-lg-0 ms-lg-2">
+                            <a href="https://www.facebook.com/profile.php?id=100087551023781" target="_blank" class="social-icon"><i class="bi bi-facebook"></i></a>
+                            <a href="https://line.me/ti/g2/wjfCNbvSbWnZRMRF7aYIg8et7SeKC2zjMyacXg" target="_blank" class="social-icon"><i class="bi bi-line"></i></a>
+                            <a href="mailto:evlyn88420@gms.ndhu.edu.tw" target="_blank" class="social-icon"><i class="bi bi-envelope"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <article id="home" class="mb-4">
+                        <header class="mb-4 text-center">
+                            <h1 class="fw-bolder mb-2">歡迎來到 國立東華大學智慧科技中心</h1>
+                            <div class="text-muted fst-italic mb-3">
+                                N.D.H.U. Smart Technology Center
+                            </div>
+                        </header>
+                        
+                        <figure class="mb-4">
+                            <img class="img-fluid rounded shadow-sm cover-img" src="images/IMG_1909.JPG" alt="智慧中心團隊照片" onerror="this.src='https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1200&h=400';" />
+                        </figure>
+                    </article>
+
+                    <section id="news" class="mb-5 bg-white p-4 p-md-5 rounded shadow-sm">
+                        
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+                            <h3 class="section-title mb-3 mb-md-0">最新消息 (Latest News)</h3>
+                            <select id="newsCategoryFilter" class="form-select form-select-sm w-auto shadow-sm cursor-pointer" style="min-width: 150px;">
+                                <option value="all">所有消息</option>
+                                <option value="center">中心/聯盟消息</option>
+                                <option value="research">研究成果</option>
+                                <option value="activity">活動訊息</option>
+                                <option value="info">資訊分享</option>
+                                <option value="media">媒體專訪</option>
+                                <option value="welcome">歡迎會員</option>
+                            </select>
+                        </div>
+                        
+                        <div id="news-container" class="list-group list-group-flush border-top border-bottom">
+                            
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="welcome">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/12/17</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2911/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 澤康生物科技 加入本聯盟會員</a>
+                                    <span class="text-muted small">歡迎 澤康…</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2911/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+                            
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="research center info">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/11/14</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2853/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">《中醫脈圖紀錄簿》App 開放申請使用</a>
+                                    <span class="text-muted small">《中醫脈診紀錄簿》適用於iPadOS及Android雙平台，歡迎各界申請下載試用。</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2853/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="center info">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/11/14</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2857/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">智慧中醫科技聯盟Facebook粉絲專頁、社團討論區、LINE社群上線囉！</a>
+                                    <span class="text-muted small">號外號外！我們的Facebook粉絲專頁、社團，以及《中醫脈診紀錄簿》App的LINE社群討論區已經成立上線囉，歡迎想要與我們互動、交流的朋友們一起加入我們！</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2857/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="welcome">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/10/19</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2202/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 慈暉書局 加入本聯盟會員</a>
+                                    <span class="text-muted small">歡迎 慈暉…</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2202/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="welcome">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/10/18</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2199/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 瑞太資訊 加入本聯盟會員</a>
+                                    <span class="text-muted small">歡迎 瑞太…</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2199/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="media activity info">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/09/07</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2211/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">本計畫參與「2022 Kiss Science—科學開門，青春不悶」展覽活動</a>
+                                    <span class="text-muted small">國立東華大學資訊工程系人工智慧實驗室在 2017 年與慈濟醫院中醫部合作，針對脈診儀、舌診儀做科學化研究。2022 年執行國科會 PAIR 計畫與產學計畫，成立智慧中醫科技聯盟，結合 AI 應用...</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2211/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="welcome">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/06/27</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2186/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 第一脈動 加入本聯盟會員</a>
+                                    <span class="text-muted small">歡迎 第一…</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2186/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="welcome">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/06/06</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2147/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 漢廈中醫診所 加入本聯盟會員</a>
+                                    <span class="text-muted small">歡迎 漢廈…</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2147/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="welcome">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/05/30</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2139/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 毅誠科技 加入本聯盟會員</a>
+                                    <span class="text-muted small">歡迎 毅誠…</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2139/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="media research info">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2022/05/26</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2128/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">《東華AI通訊報》創刊號-【AI 元宇亮東華】- 亮點研發：人工智慧在智慧醫療的應用</a>
+                                    <span class="text-muted small">自 2016 年 AlphaGo 出現之後，人工智慧(AI)成為世界科技發展的重點項目...本篇文章將介紹東華大學亮點計畫中智慧醫療的成果，包括心電圖辨識、中醫的體質判定與舌診辨識等研究成果。</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2128/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="activity research info">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2021/10/15</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2570/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">本計畫研究成果《居家醫療之線上中醫體質問診系統》於 ISPAC 2021 發表</a>
+                                    <span class="text-muted small">本計畫研究成果《居家醫療之線上中醫體質問診系統》於 33rd International Symposium on Polymer Analysis and Characterization (ISPAC 2021) 發表。</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2570/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                            <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="activity research info">
+                                <div class="news-list-date text-primary fw-bold mb-1 mb-md-0">2021/10/01</div>
+                                <div class="flex-grow-1">
+                                    <a href="https://aicenter.ndhu.edu.tw/posts/2574/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">本計畫研究成果《巡迴看診之可攜式舌診儀》於 ISPAC 2021 發表</a>
+                                    <span class="text-muted small">本計畫研究成果《巡迴看診之可攜式舌診儀》於 33rd International Symposium on Polymer Analysis and Characterization (ISPAC 2021) 發表。</span>
+                                </div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2574/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                            </div>
+
+                        </div>
+
+                        <div class="mt-4 d-flex justify-content-center">
+                            <nav aria-label="News Pagination">
+                                <ul class="pagination mb-0" id="news-pagination">
+                                    </ul>
+                            </nav>
+                        </div>
+                    </section>
+
+                    <article id="research" class="mb-5 bg-white p-4 p-md-5 rounded shadow-sm border-top border-primary border-4">
+                        <h3 class="section-title mb-4">關於我們 (About Us)</h3>
+                        
+                        <h5 class="fw-bold text-primary mb-3"><i class="bi bi-journal-text me-2"></i>中心簡介</h5>
+                        <p class="fs-6 mb-3 text-dark" style="line-height: 1.8;">
+                            近年來台灣投入大量資源發展 AI ，其中有相當大的一部分都是在發展智慧醫療，廣達創辦人林百里稱智慧醫療產業為台灣的「第二座護國神山」。中醫在台灣發展已久，水準在世界上名列前茅，華人世界看中醫，多數會認同臺灣的中醫醫療品質最為優秀。而全台中醫診所將近四千家，相當普及。但近年來臺灣看中醫的人數持續下降，原因之一是認為中醫診所不科學，步調緩慢。本計畫將嘗試以 AI 來幫助中醫診所的發展，並聯合多家中醫診所，建立智慧中醫科技聯盟，幫助中醫診所進行數位轉型。
+                        </p>
+                        <p class="fs-6 mb-4 text-dark" style="line-height: 1.8;">
+                            智慧中醫科技聯盟成員包括東華教授與慈濟醫師，專任工程師、研究生與專題生，以及來自世界各國的外籍生等。我們團隊投入智慧醫療已經有相當長的一段時間，與慈濟醫院已經進行過三年的中醫計畫，發表多篇中醫論文，並且申請與通過九件中醫科技專利，對中醫產業相當瞭解，將可幫助中醫進行數位轉型。中醫因為不分科，適合偏鄉醫療巡迴看診，本計畫也將有助於東台灣醫療 AI 的發展，與幫助數位區域平衡，造福偏鄉醫療。
+                        </p>
+                        
+                        <h5 class="fw-bold text-primary mb-3 mt-4"><i class="bi bi-eye me-2"></i>發展願景</h5>
+                        <p class="fs-6 mb-4 text-dark" style="line-height: 1.8;">
+                            我們致力於推動產學合作，將人工智慧技術實際落地應用於中醫科技、綠能與智慧農業等領域，並積極招募各界企業夥伴加入聯盟，共同打造智慧科技的創新生態圈。
+                        </p>
+
+                        <h5 class="fw-bold text-primary mb-3 mt-4"><i class="bi bi-card-checklist me-2"></i>中心任務</h5>
+                        <ol class="fs-6 text-dark mb-0 ps-3" style="line-height: 1.8;">
+                            <li class="mb-2">整合本校智慧科技相關領域教師及研究人員，從事智慧科技相關技術研發。</li>
+                            <li class="mb-2">提升本校在智慧科技跨領域研究與教學上的創新，並促進產官學的合作關係。</li>
+                            <li class="mb-2">規劃執行人工智慧相關學分與學程，推廣人工智慧，培養未來世界所需要的人才。</li>
+                            <li class="mb-2">研究東部特有人工智慧跨領域機會，進行台灣特有的農業、觀光、原住民文化的AI研究。</li>
+                            <li>辦理人工智慧相關工作坊、研討會、比賽等，拓展視野與世界接軌。</li>
+                        </ol>
+                    </article>
+                    <section id="professor" class="mb-5">
+                        <h3 class="section-title mb-4">中心團隊 (Center Team)</h3>
+                        
+                        <div class="sub-title-border text-dark fs-5">中心主任</div>
+                        <div class="card mb-4 shadow-sm border-0 hover-card bg-white">
+                            <div class="row g-0">
+                                <div class="col-md-3 d-flex align-items-center justify-content-center p-4 bg-light">
+                                    <img src="images/professor.webp" class="img-fluid rounded-circle shadow-sm" alt="顏士淨教授" onerror="this.src='https://dummyimage.com/200x200/cccccc/ffffff.png&text=Photo';">
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="card-body py-4 px-md-5">
+                                        <h4 class="fw-bold mb-1">顏士淨 (Yen, Shi-Jim)</h4>
+                                        <p class="text-primary fw-semibold mb-3">中心主持人</p>
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="mb-2"><i class="bi bi-building text-primary me-2"></i><strong>服務系所：</strong> 理工學院 資訊工程學系</li>
+                                            <li class="mb-2"><i class="bi bi-mortarboard text-primary me-2"></i><strong>最高學歷：</strong> 國立台灣大學 資訊工程研究所 博士 (1999)</li>
+                                            <li class="mb-2"><i class="bi bi-lightbulb text-primary me-2"></i><strong>研究領域：</strong> 人工智慧、機器學習、醫療 AI、電腦對局</li>
+                                            <li class="mb-2"><i class="bi bi-envelope text-primary me-2"></i><strong>Email：</strong> <a href="mailto:sjyen@gms.ndhu.edu.tw" class="text-decoration-none">sjyen@gms.ndhu.edu.tw</a></li>
+                                            <li><i class="bi bi-telephone text-primary me-2"></i><strong>電話：</strong> +886-3-8905031 / 5051</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sub-title-border text-dark fs-5">共同主持人</div>
+                        <div class="row g-3">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h5 class="fw-bold mb-1">林宜信</h5>
+                                    <p class="text-primary small fw-semibold mb-2">共同主持人</p>
+                                    <p class="text-muted small mb-0"><i class="bi bi-building me-1"></i>佛教慈濟大學 學士後中醫系</p>
+                                    <p class="text-secondary small mb-0">教授兼系主任</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h5 class="fw-bold mb-1">陳震宇</h5>
+                                    <p class="text-primary small fw-semibold mb-2">中心副主任 / 共同主持人</p>
+                                    <p class="text-muted small mb-0"><i class="bi bi-building me-1"></i>國立東華大學 電機工程學系</p>
+                                    <p class="text-secondary small mb-0">教授</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h5 class="fw-bold mb-1">葉國暉</h5>
+                                    <p class="text-primary small fw-semibold mb-2">共同主持人</p>
+                                    <p class="text-muted small mb-0"><i class="bi bi-building me-1"></i>國立東華大學 資訊管理學系</p>
+                                    <p class="text-secondary small mb-0">教授</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h5 class="fw-bold mb-1">楊成湛</h5>
+                                    <p class="text-primary small fw-semibold mb-2">共同主持人</p>
+                                    <p class="text-muted small mb-0"><i class="bi bi-building me-1"></i>花蓮慈濟醫院 中醫部</p>
+                                    <p class="text-secondary small mb-0">主治醫師兼中醫兒科主任</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h5 class="fw-bold mb-1">周信宏</h5>
+                                    <p class="text-primary small fw-semibold mb-2">共同主持人</p>
+                                    <p class="text-muted small mb-0"><i class="bi bi-building me-1"></i>國立暨南國際大學 資訊工程學系</p>
+                                    <p class="text-secondary small mb-0">副教授</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h5 class="fw-bold mb-1">簡暐哲</h5>
+                                    <p class="text-primary small fw-semibold mb-2">中心副主任 / 共同主持人</p>
+                                    <p class="text-muted small mb-0"><i class="bi bi-building me-1"></i>國立東華大學 資訊工程學系</p>
+                                    <p class="text-secondary small mb-0">助理教授</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sub-title-border text-dark fs-5">中醫顧問</div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h5 class="fw-bold mb-1">王建富</h5>
+                                    <p class="text-info small fw-semibold mb-2">中醫顧問</p>
+                                    <p class="text-muted small mb-0"><i class="bi bi-building me-1"></i>漢廈中醫診所</p>
+                                    <p class="text-secondary small mb-0">中醫師兼院長</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h5 class="fw-bold mb-1">吳沛恩</h5>
+                                    <p class="text-info small fw-semibold mb-2">中醫顧問</p>
+                                    <p class="text-muted small mb-0"><i class="bi bi-building me-1"></i>漢華中醫診所</p>
+                                    <p class="text-secondary small mb-0">中醫師</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sub-title-border text-dark fs-5">執行與技術團隊</div>
+                        <div class="row g-3">
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h6 class="fw-bold mb-1">彭英茜</h6>
+                                    <p class="text-success small fw-semibold mb-2">專案經理</p>
+                                    <p class="text-muted small mb-0">國立東華大學 資工系</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h6 class="fw-bold mb-1">林鈺錦</h6>
+                                    <p class="text-success small fw-semibold mb-2">系統工程師</p>
+                                    <p class="text-muted small mb-0">國立東華大學 資工系</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h6 class="fw-bold mb-1">Musa Mukhammed</h6>
+                                    <p class="text-success small fw-semibold mb-2">系統工程師 / 資料科學</p>
+                                    <p class="text-muted small mb-0">國立東華大學 資工系</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card h-100 shadow-sm border-0 hover-card bg-white p-3">
+                                    <h6 class="fw-bold mb-1">Kavak Serkan</h6>
+                                    <p class="text-success small fw-semibold mb-2">系統工程師</p>
+                                    <p class="text-muted small mb-0">國立東華大學 資工系</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <section id="contact" class="mb-5">
+                        <div class="card shadow-sm border-0 bg-white border-top border-primary border-4">
+                            <div class="card-body p-4 p-md-5">
+                                <h3 class="section-title mb-4">聯絡我們 (Contact Us)</h3>
+                                <div class="row">
+                                    <div class="col-md-7 mb-4 mb-md-0">
+                                        <div class="d-flex mb-3">
+                                            <i class="bi bi-person-badge fs-3 text-primary me-3 mt-1"></i>
+                                            <div>
+                                                <strong class="d-block text-dark fs-5">聯絡人</strong>
+                                                <span class="text-muted">彭小姐</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mb-3">
+                                            <i class="bi bi-geo-alt fs-3 text-primary me-3 mt-1"></i>
+                                            <div>
+                                                <strong class="d-block text-dark fs-5">地址</strong>
+                                                <span class="text-muted">974003 花蓮縣壽豐鄉志學村大學路二段1號工D303</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mb-3">
+                                            <i class="bi bi-envelope fs-3 text-primary me-3 mt-1"></i>
+                                            <div>
+                                                <strong class="d-block text-dark fs-5">Email</strong>
+                                                <a href="mailto:evlyn88420@gms.ndhu.edu.tw" class="text-decoration-none fs-6">evlyn88420@gms.ndhu.edu.tw</a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mb-4">
+                                            <i class="bi bi-telephone fs-3 text-primary me-3 mt-1"></i>
+                                            <div>
+                                                <strong class="d-block text-dark fs-5">聯絡電話</strong>
+                                                <a href="tel:+886-38905051" class="text-decoration-none fs-6 text-muted">(03) 8905051</a>
+                                            </div>
+                                        </div>
+                                        
+                                        <hr class="my-4 border-light">
+                                        <h5 class="fw-bold text-primary mb-3"><i class="bi bi-share-fill me-2"></i>社群資訊 (Social Media)</h5>
+                                        <div class="d-flex flex-wrap gap-3">
+                                            <a href="https://www.facebook.com/profile.php?id=100087551023781" target="_blank" class="btn btn-outline-primary shadow-sm rounded-pill px-4">
+                                                <i class="bi bi-facebook me-2"></i>Facebook 粉絲專頁
+                                            </a>
+                                            <a href="https://www.facebook.com/groups/514112400600052/" target="_blank" class="btn btn-outline-primary shadow-sm rounded-pill px-4">
+                                                <i class="bi bi-people-fill me-2"></i>Facebook 社團
+                                            </a>
+                                            <a href="https://line.me/ti/g2/wjfCNbvSbWnZRMRF7aYIg8et7SeKC2zjMyacXg" target="_blank" class="btn btn-outline-success shadow-sm rounded-pill px-4">
+                                                <i class="bi bi-line me-2"></i>中醫脈診紀錄簿- LINE 社群討論區
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-5 d-flex align-items-center justify-content-center justify-content-md-end">
+                                        <a href="https://maps.google.com/?q=國立東華大學理工二館" target="_blank" class="btn btn-outline-primary btn-lg w-100 py-3 shadow-sm">
+                                            <i class="bi bi-map me-2"></i> 開啟 Google 地圖
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+        
+        <footer class="py-5 bg-dark mt-auto text-white-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                        <h6 class="footer-title">頁面導覽</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="#news" class="footer-link">最新消息</a></li>
+                            <li><a href="#research" class="footer-link">關於我們</a></li>
+                            <li><a href="#techniques" class="footer-link">聯盟技術</a></li>
+                            <li><a href="#" class="footer-link">聯盟活動</a></li>
+                            <li><a href="#contact" class="footer-link">聯絡我們</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                        <h6 class="footer-title">友善連結</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="https://www.ndhu.edu.tw" target="_blank" class="footer-link">國立東華大學</a></li>
+                            <li><a href="https://www.nstc.gov.tw/" target="_blank" class="footer-link">國家科學及技術委員會</a></li>
+                            <li><a href="https://csie.ndhu.edu.tw" target="_blank" class="footer-link">國立東華大學資工系</a></li>
+                            <li><a href="#" class="footer-link">國立東華大學智慧科技中心</a></li>
+                            <li><a href="#" class="footer-link">國立東華大學人工智慧實驗室</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5 col-md-12">
+                        <img src="https://tcm.csie.ndhu.edu.tw/wp-content/uploads/2022/11/logo_text_w-1.png" alt="國立東華大學智慧科技中心" class="img-fluid mb-4" style="max-width: 280px; opacity: 0.9;" />
+                        <p class="mb-1"><strong>地址：</strong>974003 花蓮縣壽豐鄉志學村大學路二段1號工D303</p>
+                        <p class="mb-1"><strong>聯絡人：</strong>彭英茜 經理</p>
+                        <p class="mb-1"><strong>聯絡電話：</strong><a href="tel:+886-38905051" class="footer-link">(03) 8905051</a></p>
+                        <p class="mb-0"><strong>Email：</strong><a href="mailto:evlyn88420@gms.ndhu.edu.tw" class="footer-link">evlyn88420@gms.ndhu.edu.tw</a></p>
+                    </div>
+                </div>
+                
+                <hr class="mt-5 mb-4 border-secondary" />
+                
+                <div class="text-center text-sm">
+                    <p class="m-0 mb-2">Copyright © 2026 國立東華大學</p>
+                    <small>國立東華大學智慧科技中心 × 智慧科技中心 × 人工智慧實驗室</small>
+                </div>
+            </div>
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <script>
+            // 1. 行動裝置點擊導覽列後自動收合
+            const navLinks = document.querySelectorAll('.nav-item .nav-link:not(.dropdown-toggle)');
+            const menuToggle = document.getElementById('navbarSupportedContent');
+            const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
+            navLinks.forEach((l) => {
+                l.addEventListener('click', () => { if(menuToggle.classList.contains('show')){ bsCollapse.toggle() } })
+            });
+
+            // 2. 動態新聞篩選與分頁功能
+            const newsFilter = document.getElementById('newsCategoryFilter');
+            const allNewsItems = Array.from(document.querySelectorAll('.news-list-item'));
+            const paginationContainer = document.getElementById('news-pagination');
+            const itemsPerPage = 6;
+            
+            let currentFilteredItems = [...allNewsItems];
+            let currentPage = 1;
+
+            function renderNews() {
+                // 先隱藏所有項目
+                allNewsItems.forEach(item => {
+                    item.classList.remove('d-flex');
+                    item.classList.add('d-none');
+                });
+
+                // 計算總頁數
+                const totalPages = Math.ceil(currentFilteredItems.length / itemsPerPage) || 1;
+                if (currentPage > totalPages) currentPage = totalPages;
+
+                // 顯示當前頁面的項目
+                const start = (currentPage - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+                
+                for (let i = start; i < end && i < currentFilteredItems.length; i++) {
+                    currentFilteredItems[i].classList.remove('d-none');
+                    currentFilteredItems[i].classList.add('d-flex');
+                }
+
+                // 產生分頁導覽按鈕 HTML
+                let paginationHTML = '';
+                
+                // 上一頁
+                paginationHTML += `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                    <a class="page-link" href="#news" data-page="${currentPage - 1}"><i class="bi bi-chevron-left me-1"></i>上一頁</a>
+                </li>`;
+                
+                // 數字頁碼
+                for (let i = 1; i <= totalPages; i++) {
+                    paginationHTML += `<li class="page-item ${currentPage === i ? 'active' : ''}">
+                        <a class="page-link" href="#news" data-page="${i}">${i}</a>
+                    </li>`;
+                }
+
+                // 下一頁
+                paginationHTML += `<li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+                    <a class="page-link" href="#news" data-page="${currentPage + 1}">下一頁 <i class="bi bi-chevron-right ms-1"></i></a>
+                </li>`;
+
+                paginationContainer.innerHTML = paginationHTML;
+
+                // 綁定分頁按鈕點擊事件
+                paginationContainer.querySelectorAll('.page-link').forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault(); // 防止網頁跳動
+                        const parent = this.parentElement;
+                        if(parent.classList.contains('disabled')) return;
+                        
+                        const newPage = parseInt(this.getAttribute('data-page'));
+                        if(newPage) {
+                            currentPage = newPage;
+                            renderNews();
+                        }
+                    });
+                });
+            }
+
+            // 綁定下拉選單改變事件
+            newsFilter.addEventListener('change', function() {
+                const filterValue = this.value;
+                if (filterValue === 'all') {
+                    currentFilteredItems = [...allNewsItems];
+                } else {
+                    currentFilteredItems = allNewsItems.filter(item => {
+                        const categories = item.getAttribute('data-category');
+                        return categories && categories.includes(filterValue);
+                    });
+                }
+                currentPage = 1; // 篩選後重置為第一頁
+                renderNews();
+            });
+
+            // 網頁載入時初始化
+            document.addEventListener("DOMContentLoaded", function() {
+                renderNews();
+            });
+        </script>
+    </body>
+</html>
