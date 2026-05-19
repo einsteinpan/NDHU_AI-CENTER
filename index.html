@@ -30,7 +30,7 @@
 
                 if (index >= candidates.length) {
                     img.onerror = null;
-                    img.alt = img.alt + '';
+                    img.alt = img.alt + '（圖片路徑請確認）';
                     return;
                 }
 
@@ -101,6 +101,18 @@
                 font-family: monospace;
                 font-size: 0.95rem;
                 min-width: 95px;
+            }
+
+
+            /* 最新消息：避免「閱讀全文」按鈕因寬度不足而換行 */
+            .news-list-item .news-action {
+                flex: 0 0 auto;
+                white-space: nowrap;
+            }
+            .news-list-item .news-readmore-btn {
+                min-width: 86px;
+                white-space: nowrap;
+                flex-shrink: 0;
             }
 
             /* 自訂捲軸樣式 */
@@ -243,7 +255,7 @@
                                     <a href="https://aicenter.ndhu.edu.tw/posts/2911/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 澤康生物科技 加入本聯盟會員</a>
                                     <span class="text-muted small">歡迎 澤康…</span>
                                 </div>
-                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2911/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end news-action"><a href="https://aicenter.ndhu.edu.tw/posts/2911/" target="_blank" class="btn btn-sm btn-outline-secondary px-3 news-readmore-btn">閱讀全文</a></div>
                             </div>
                             
                             <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="research center info">
@@ -252,7 +264,7 @@
                                     <a href="https://aicenter.ndhu.edu.tw/posts/2853/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">《中醫脈圖紀錄簿》App 開放申請使用</a>
                                     <span class="text-muted small">《中醫脈診紀錄簿》適用於iPadOS及Android雙平台，歡迎各界申請下載試用。</span>
                                 </div>
-                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2853/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end news-action"><a href="https://aicenter.ndhu.edu.tw/posts/2853/" target="_blank" class="btn btn-sm btn-outline-secondary px-3 news-readmore-btn">閱讀全文</a></div>
                             </div>
 
                             <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="center info">
@@ -261,7 +273,7 @@
                                     <a href="https://aicenter.ndhu.edu.tw/posts/2857/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">智慧中醫科技聯盟Facebook粉絲專頁、社團討論區、LINE社群上線囉！</a>
                                     <span class="text-muted small">號外號外！我們的Facebook粉絲專頁、社團，以及《中醫脈診紀錄簿》App的LINE社群討論區已經成立上線囉，歡迎想要與我們互動、交流的朋友們一起加入我們！</span>
                                 </div>
-                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2857/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end news-action"><a href="https://aicenter.ndhu.edu.tw/posts/2857/" target="_blank" class="btn btn-sm btn-outline-secondary px-3 news-readmore-btn">閱讀全文</a></div>
                             </div>
 
                             <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="welcome">
@@ -270,7 +282,7 @@
                                     <a href="https://aicenter.ndhu.edu.tw/posts/2202/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 慈暉書局 加入本聯盟會員</a>
                                     <span class="text-muted small">歡迎 慈暉…</span>
                                 </div>
-                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2202/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end news-action"><a href="https://aicenter.ndhu.edu.tw/posts/2202/" target="_blank" class="btn btn-sm btn-outline-secondary px-3 news-readmore-btn">閱讀全文</a></div>
                             </div>
 
                             <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="welcome">
@@ -279,7 +291,7 @@
                                     <a href="https://aicenter.ndhu.edu.tw/posts/2199/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 瑞太資訊 加入本聯盟會員</a>
                                     <span class="text-muted small">歡迎 瑞太…</span>
                                 </div>
-                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2199/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end news-action"><a href="https://aicenter.ndhu.edu.tw/posts/2199/" target="_blank" class="btn btn-sm btn-outline-secondary px-3 news-readmore-btn">閱讀全文</a></div>
                             </div>
 
                             <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="media activity info">
@@ -288,7 +300,7 @@
                                     <a href="https://aicenter.ndhu.edu.tw/posts/2211/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">本計畫參與「2022 Kiss Science—科學開門，青春不悶」展覽活動</a>
                                     <span class="text-muted small">國立東華大學資訊工程系人工智慧實驗室在 2017 年與慈濟醫院中醫部合作，針對脈診儀、舌診儀做科學化研究。2022 年執行國科會 PAIR 計畫與產學計畫，成立智慧中醫科技聯盟，結合 AI 應用...</span>
                                 </div>
-                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2211/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end news-action"><a href="https://aicenter.ndhu.edu.tw/posts/2211/" target="_blank" class="btn btn-sm btn-outline-secondary px-3 news-readmore-btn">閱讀全文</a></div>
                             </div>
 
                             <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="welcome">
@@ -297,7 +309,7 @@
                                     <a href="https://aicenter.ndhu.edu.tw/posts/2186/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 第一脈動 加入本聯盟會員</a>
                                     <span class="text-muted small">歡迎 第一…</span>
                                 </div>
-                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2186/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end news-action"><a href="https://aicenter.ndhu.edu.tw/posts/2186/" target="_blank" class="btn btn-sm btn-outline-secondary px-3 news-readmore-btn">閱讀全文</a></div>
                             </div>
 
                             <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="welcome">
@@ -306,7 +318,7 @@
                                     <a href="https://aicenter.ndhu.edu.tw/posts/2147/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 漢廈中醫診所 加入本聯盟會員</a>
                                     <span class="text-muted small">歡迎 漢廈…</span>
                                 </div>
-                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2147/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end news-action"><a href="https://aicenter.ndhu.edu.tw/posts/2147/" target="_blank" class="btn btn-sm btn-outline-secondary px-3 news-readmore-btn">閱讀全文</a></div>
                             </div>
 
                             <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="welcome">
@@ -315,7 +327,7 @@
                                     <a href="https://aicenter.ndhu.edu.tw/posts/2139/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">歡迎 毅誠科技 加入本聯盟會員</a>
                                     <span class="text-muted small">歡迎 毅誠…</span>
                                 </div>
-                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2139/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end news-action"><a href="https://aicenter.ndhu.edu.tw/posts/2139/" target="_blank" class="btn btn-sm btn-outline-secondary px-3 news-readmore-btn">閱讀全文</a></div>
                             </div>
 
                             <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="media research info">
@@ -324,7 +336,7 @@
                                     <a href="https://aicenter.ndhu.edu.tw/posts/2128/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">《東華AI通訊報》創刊號-【AI 元宇亮東華】- 亮點研發：人工智慧在智慧醫療的應用</a>
                                     <span class="text-muted small">自 2016 年 AlphaGo 出現之後，人工智慧(AI)成為世界科技發展的重點項目...本篇文章將介紹東華大學亮點計畫中智慧醫療的成果，包括心電圖辨識、中醫的體質判定與舌診辨識等研究成果。</span>
                                 </div>
-                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2128/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end news-action"><a href="https://aicenter.ndhu.edu.tw/posts/2128/" target="_blank" class="btn btn-sm btn-outline-secondary px-3 news-readmore-btn">閱讀全文</a></div>
                             </div>
 
                             <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="activity research info">
@@ -333,7 +345,7 @@
                                     <a href="https://aicenter.ndhu.edu.tw/posts/2570/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">本計畫研究成果《居家醫療之線上中醫體質問診系統》於 ISPAC 2021 發表</a>
                                     <span class="text-muted small">本計畫研究成果《居家醫療之線上中醫體質問診系統》於 33rd International Symposium on Polymer Analysis and Characterization (ISPAC 2021) 發表。</span>
                                 </div>
-                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2570/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end news-action"><a href="https://aicenter.ndhu.edu.tw/posts/2570/" target="_blank" class="btn btn-sm btn-outline-secondary px-3 news-readmore-btn">閱讀全文</a></div>
                             </div>
 
                             <div class="list-group-item flex-column flex-md-row align-items-md-center py-3 news-list-item d-none" data-category="activity research info">
@@ -342,7 +354,7 @@
                                     <a href="https://aicenter.ndhu.edu.tw/posts/2574/" target="_blank" class="text-dark fw-semibold text-decoration-none d-block mb-1">本計畫研究成果《巡迴看診之可攜式舌診儀》於 ISPAC 2021 發表</a>
                                     <span class="text-muted small">本計畫研究成果《巡迴看診之可攜式舌診儀》於 33rd International Symposium on Polymer Analysis and Characterization (ISPAC 2021) 發表。</span>
                                 </div>
-                                <div class="ms-md-3 mt-2 mt-md-0 text-end"><a href="https://aicenter.ndhu.edu.tw/posts/2574/" target="_blank" class="btn btn-sm btn-outline-secondary px-3">閱讀全文</a></div>
+                                <div class="ms-md-3 mt-2 mt-md-0 text-end news-action"><a href="https://aicenter.ndhu.edu.tw/posts/2574/" target="_blank" class="btn btn-sm btn-outline-secondary px-3 news-readmore-btn">閱讀全文</a></div>
                             </div>
 
                         </div>
@@ -523,7 +535,7 @@
                         <div class="row g-4 justify-content-center">
                             <div class="col-md-6 col-lg-4">
                                 <div class="card h-100 shadow-sm border-0 hover-card bg-white">
-                                    <img src="images/bcq01.webp" data-img-bases="images/bcq01,images/bcn01" data-try-index="1" onerror="loadTechImage(this)" class="card-img-top tech-card-img" alt="中醫體質線上問診系統">
+                                    <img src="images/bcq01.png" data-img-bases="images/bcq01,images/bcn01" data-try-index="1" onerror="loadTechImage(this)" class="card-img-top tech-card-img" alt="中醫體質線上問診系統">
                                     <div class="card-body tech-card-body p-4">
                                         <span class="tech-tag">AI 問診系統</span>
                                         <h5 class="card-title fw-bold text-primary"><i class="bi bi-clipboard2-pulse tech-card-title-icon"></i>中醫體質線上問診系統</h5>
@@ -536,7 +548,7 @@
 
                             <div class="col-md-6 col-lg-4">
                                 <div class="card h-100 shadow-sm border-0 hover-card bg-white">
-                                    <img src="images/bcn02.webp" data-img-bases="images/bcn02,images/bcq02" data-try-index="1" onerror="loadTechImage(this)" class="card-img-top tech-card-img" alt="智慧脈診辨識">
+                                    <img src="images/bcn02.png" data-img-bases="images/bcn02,images/bcq02" data-try-index="1" onerror="loadTechImage(this)" class="card-img-top tech-card-img" alt="智慧脈診辨識">
                                     <div class="card-body tech-card-body p-4">
                                         <span class="tech-tag">脈診數據化</span>
                                         <h5 class="card-title fw-bold text-primary"><i class="bi bi-activity tech-card-title-icon"></i>智慧脈診辨識</h5>
@@ -549,7 +561,7 @@
 
                             <div class="col-md-6 col-lg-4">
                                 <div class="card h-100 shadow-sm border-0 hover-card bg-white">
-                                    <img src="images/bcn03.webp" data-img-bases="images/bcn03,images/bcq03" data-try-index="1" onerror="loadTechImage(this)" class="card-img-top tech-card-img" alt="舌診儀">
+                                    <img src="images/bnq03.png" data-img-bases="images/bcn03,images/bcq03" data-try-index="1" onerror="loadTechImage(this)" class="card-img-top tech-card-img" alt="舌診儀">
                                     <div class="card-body tech-card-body p-4">
                                         <span class="tech-tag">舌象辨識</span>
                                         <h5 class="card-title fw-bold text-primary"><i class="bi bi-camera tech-card-title-icon"></i>舌診儀</h5>
@@ -562,7 +574,7 @@
 
                             <div class="col-md-6 col-lg-4">
                                 <div class="card h-100 shadow-sm border-0 hover-card bg-white">
-                                    <img src="images/bcn04.webp" data-img-bases="images/bcn04,images/bcq04" data-try-index="1" onerror="loadTechImage(this)" class="card-img-top tech-card-img" alt="心電圖 STEMI 分析">
+                                    <img src="images/bcn04.png" data-img-bases="images/bcn04,images/bcq04" data-try-index="1" onerror="loadTechImage(this)" class="card-img-top tech-card-img" alt="心電圖 STEMI 分析">
                                     <div class="card-body tech-card-body p-4">
                                         <span class="tech-tag">心電圖 AI 分析</span>
                                         <h5 class="card-title fw-bold text-primary"><i class="bi bi-heart-pulse tech-card-title-icon"></i>心電圖 STEMI 分析</h5>
@@ -575,7 +587,7 @@
 
                             <div class="col-md-6 col-lg-4">
                                 <div class="card h-100 shadow-sm border-0 hover-card bg-white">
-                                    <img src="images/bcq05.webp" data-img-bases="images/bcn05,images/bcq05" data-try-index="1" onerror="loadTechImage(this)" class="card-img-top tech-card-img" alt="智慧血液透析系統">
+                                    <img src="images/bcn05.png" data-img-bases="images/bcn05,images/bcq05" data-try-index="1" onerror="loadTechImage(this)" class="card-img-top tech-card-img" alt="智慧血液透析系統">
                                     <div class="card-body tech-card-body p-4">
                                         <span class="tech-tag">智慧照護系統</span>
                                         <h5 class="card-title fw-bold text-primary"><i class="bi bi-hospital tech-card-title-icon"></i>智慧血液透析系統</h5>
